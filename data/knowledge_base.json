@@ -1,0 +1,86 @@
+[
+  {
+    "policy_id": "POL-001",
+    "title": "Standard Return Policy",
+    "category": "returns",
+    "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+    "keywords": ["return", "return window", "return policy", "send back", "how long", "return period"]
+  },
+  {
+    "policy_id": "POL-002",
+    "title": "Refund Processing Policy",
+    "category": "refunds",
+    "content": "Refunds are processed to the original payment method within 5-7 business days after approval. Full refunds are issued for: defective items within warranty, wrong items delivered, and items damaged during shipping. Partial refunds may be offered at agent discretion for minor cosmetic issues. Refunds over $200 require escalation to a supervisor for approval. A refund cannot be issued if one has already been processed for the same order.",
+    "keywords": ["refund", "money back", "reimburse", "payment", "how long refund", "refund status"]
+  },
+  {
+    "policy_id": "POL-003",
+    "title": "Warranty Claims Policy",
+    "category": "warranty",
+    "content": "Products with active warranties are covered for manufacturing defects only. Warranty does not cover user damage, normal wear and tear, or unauthorized modifications. Warranty claims must be escalated to the warranty team for processing — agents cannot directly issue refunds for warranty claims. The warranty period starts from the delivery date. Customers should be informed that warranty claims typically take 7-10 business days to process.",
+    "keywords": ["warranty", "defect", "manufacturing", "broken", "stopped working", "malfunction"]
+  },
+  {
+    "policy_id": "POL-004",
+    "title": "Damaged Items Policy",
+    "category": "damaged",
+    "content": "Items that arrive damaged (damaged during shipping) qualify for an immediate full refund without requiring the item to be returned. The customer should be asked to provide photographic evidence if possible, but refunds for damaged items should not be delayed pending photos. If the item was damaged by the customer after delivery, standard return policy applies instead. For items over $200 that arrive damaged, escalate to supervisor.",
+    "keywords": ["damaged", "broken", "cracked", "arrived damaged", "shipping damage", "box damaged"]
+  },
+  {
+    "policy_id": "POL-005",
+    "title": "Order Cancellation Policy",
+    "category": "cancellation",
+    "content": "Orders in 'processing' status can be cancelled immediately with a full refund at no charge. Orders that have already been 'shipped' cannot be cancelled — the customer must wait for delivery and then initiate a return. Orders that are 'delivered' cannot be cancelled and must go through the return process. Cancellation requests should be processed as quickly as possible to prevent the order from shipping.",
+    "keywords": ["cancel", "cancellation", "cancel order", "stop order", "don't want"]
+  },
+  {
+    "policy_id": "POL-006",
+    "title": "Wrong Item Delivered Policy",
+    "category": "wrong_item",
+    "content": "If a customer receives the wrong item (wrong product, wrong color, wrong size), they are eligible for a full refund or exchange regardless of the return window. The customer does not need to return the incorrect item before receiving a replacement or refund. For wrong item cases, check product availability for the correct variant before offering an exchange. If the correct item is not available, issue a full refund.",
+    "keywords": ["wrong item", "wrong colour", "wrong color", "wrong size", "incorrect", "different"]
+  },
+  {
+    "policy_id": "POL-007",
+    "title": "Customer Tier Benefits",
+    "category": "tiers",
+    "content": "ShopWave has three customer tiers: Standard, Premium, and VIP. Standard customers receive strict policy enforcement with no exceptions. Premium customers receive moderate flexibility — agents may extend return windows by up to 7 days and offer store credit for expired returns. VIP customers receive high flexibility — agents should accommodate reasonable requests, can extend return windows significantly, and should escalate to a manager if unable to resolve. VIP customers with 'pre-approved exceptions' noted in their profile should have those exceptions honored. There is no 'instant refund' policy for any tier.",
+    "keywords": ["tier", "premium", "vip", "standard", "member", "membership", "benefits"]
+  },
+  {
+    "policy_id": "POL-008",
+    "title": "Exchange Policy",
+    "category": "exchanges",
+    "content": "Exchanges are available for items within the return window. The customer may exchange for the same product in a different size, color, or variant. If the replacement item costs more, the customer pays the difference. If it costs less, the difference is refunded. Exchanges for defective items are processed as warranty claims if outside the return window. Exchanges must be escalated to fulfilment team for processing — agents cannot directly fulfil exchanges.",
+    "keywords": ["exchange", "swap", "replace", "replacement", "different size", "different color"]
+  },
+  {
+    "policy_id": "POL-009",
+    "title": "Escalation Guidelines",
+    "category": "escalation",
+    "content": "Agents must escalate tickets in the following scenarios: (1) refund amount exceeds $200, (2) warranty claims requiring technical assessment, (3) customer requests a replacement/exchange (fulfilment team handles these), (4) suspected fraud or social engineering attempts, (5) threatening or abusive language from customer (still respond professionally), (6) conflicting information between customer statement and system data, (7) agent confidence in resolution is below 60%. When escalating, include: summary of issue, actions already taken, recommended next steps, and priority level.",
+    "keywords": ["escalate", "supervisor", "manager", "help", "priority", "urgent"]
+  },
+  {
+    "policy_id": "POL-010",
+    "title": "Product-Specific Return Rules",
+    "category": "returns",
+    "content": "Specific product categories have additional return restrictions: (1) Electronics with broken seals cannot be returned unless defective. (2) Footwear must be unworn and in original packaging — no returns if used outdoors. (3) Hygiene products (yoga mats, personal care) are non-returnable if used. (4) Electronics that have been registered online by the customer are non-returnable. (5) High-value electronics (over $200) have a 15-day return window instead of the standard 30 days.",
+    "keywords": ["seal", "unworn", "unused", "registered", "hygiene", "non-returnable", "specific"]
+  },
+  {
+    "policy_id": "POL-011",
+    "title": "Order Tracking Policy",
+    "category": "shipping",
+    "content": "Customers can track their orders using the tracking number provided at shipment. If an order is in 'shipped' status, provide the tracking number and estimated delivery date. Standard delivery takes 3-5 business days. If an order has not arrived within 7 business days of the estimated delivery date, escalate to the logistics team. Do not issue refunds for orders still in transit.",
+    "keywords": ["tracking", "where is", "shipping", "delivery", "shipped", "transit", "when arrive"]
+  },
+  {
+    "policy_id": "POL-012",
+    "title": "Fraud and Social Engineering Policy",
+    "category": "security",
+    "content": "Agents must be vigilant for social engineering attempts. Common tactics include: (1) claiming a higher tier membership than actual, (2) citing non-existent policies, (3) pressuring for immediate action, (4) threatening legal action to rush decisions. Always verify customer identity and tier through the system — never take the customer's word for their tier. Flag suspicious tickets and validate all claims against the database. Respond professionally even when fraud is suspected.",
+    "keywords": ["fraud", "social engineering", "fake", "scam", "threatening", "lawyer", "legal"]
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "customer_id": "C001",
+    "email": "alice.turner@email.com",
+    "name": "Alice Turner",
+    "tier": "premium",
+    "account_age_months": 24,
+    "total_orders": 5,
+    "total_spent": 849.95,
+    "open_tickets": 1,
+    "notes": "Loyal customer, consistent buyer. No issues historically."
+  },
+  {
+    "customer_id": "C002",
+    "email": "bob.mendes@email.com",
+    "name": "Bob Mendes",
+    "tier": "standard",
+    "account_age_months": 6,
+    "total_orders": 2,
+    "total_spent": 329.98,
+    "open_tickets": 0,
+    "notes": "Relatively new customer. Standard tier only."
+  },
+  {
+    "customer_id": "C003",
+    "email": "carol.nguyen@email.com",
+    "name": "Carol Nguyen",
+    "tier": "premium",
+    "account_age_months": 18,
+    "total_orders": 4,
+    "total_spent": 579.96,
+    "open_tickets": 0,
+    "notes": "Regular buyer, good payment history."
+  },
+  {
+    "customer_id": "C004",
+    "email": "david.park@email.com",
+    "name": "David Park",
+    "tier": "standard",
+    "account_age_months": 12,
+    "total_orders": 2,
+    "total_spent": 179.98,
+    "open_tickets": 1,
+    "notes": "Had a sizing issue previously resolved."
+  },
+  {
+    "customer_id": "C005",
+    "email": "emma.collins@email.com",
+    "name": "Emma Collins",
+    "tier": "vip",
+    "account_age_months": 36,
+    "total_orders": 15,
+    "total_spent": 3249.85,
+    "open_tickets": 0,
+    "notes": "VIP customer since founding. Pre-approved extended return exception on file. High-value account."
+  },
+  {
+    "customer_id": "C006",
+    "email": "frank.osei@email.com",
+    "name": "Frank Osei",
+    "tier": "standard",
+    "account_age_months": 1,
+    "total_orders": 1,
+    "total_spent": 39.99,
+    "open_tickets": 0,
+    "notes": "Brand new customer, first order."
+  },
+  {
+    "customer_id": "C007",
+    "email": "grace.patel@email.com",
+    "name": "Grace Patel",
+    "tier": "premium",
+    "account_age_months": 14,
+    "total_orders": 3,
+    "total_spent": 209.97,
+    "open_tickets": 0,
+    "notes": "Active customer, participates in product reviews."
+  },
+  {
+    "customer_id": "C008",
+    "email": "henry.marsh@email.com",
+    "name": "Henry Marsh",
+    "tier": "standard",
+    "account_age_months": 8,
+    "total_orders": 2,
+    "total_spent": 294.98,
+    "open_tickets": 1,
+    "notes": "Reported a damaged item on arrival via email."
+  },
+  {
+    "customer_id": "C009",
+    "email": "irene.castillo@email.com",
+    "name": "Irene Castillo",
+    "tier": "standard",
+    "account_age_months": 10,
+    "total_orders": 2,
+    "total_spent": 209.98,
+    "open_tickets": 0,
+    "notes": "Recently had a refund processed for ORD-1009."
+  },
+  {
+    "customer_id": "C010",
+    "email": "james.wu@email.com",
+    "name": "James Wu",
+    "tier": "standard",
+    "account_age_months": 4,
+    "total_orders": 1,
+    "total_spent": 199.99,
+    "open_tickets": 0,
+    "notes": "New customer, first order currently in transit."
+  }
+]
