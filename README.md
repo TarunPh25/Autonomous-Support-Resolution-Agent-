@@ -8,7 +8,7 @@
 
 **Segment Name:** AI Agents / Customer Support Automation
 
-**Your Name:** Tarun Phogat
+**Your Name:** Tarun 
 
 **Target Roles:** AI Engineer, Backend Developer, Product Manager
 
