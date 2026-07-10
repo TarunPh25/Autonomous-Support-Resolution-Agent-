@@ -253,4 +253,22 @@ Processing Time:  <1s (deterministic) / ~90s (LLM with rate limits)
 | Ticket | Category | Status | Confidence | Steps | Key Behavior |
 |--------|----------|--------|------------|-------|--------------|
 | TKT-001 | refund | Resolved | 100% | 7 | Full refund $129.99, TXN issued |
-| TKT-002 | return | Escalated | 100% | 5 | Escalated to tier 2 for supervisor approval |
+| TKT-002 | return | Escalated | 100% | 5 | >$200 → supervisor required |
+| TKT-003 | damage_claim | Escalated | 100% | 4 | Replacement → fulfilment team |
+| TKT-004 | wrong_item | Resolved | 100% | 6 | Wrong size, threatening language |
+| TKT-005 | return | Resolved | 100% | 6 | VIP exception honored |
+| TKT-006 | cancellation | Resolved | 82.5% | 3 | Processing → cancelled |
+| TKT-007 | return | Resolved | 100% | 7 | Within 60-day window |
+| TKT-008 | damage_claim | Resolved | 100% | 7 | Full refund, no return needed |
+| TKT-009 | refund | Resolved | 100% | 6 | Already refunded confirmed |
+| TKT-010 | order_status | Resolved | 82.5% | 4 | Tracking info shared |
+| TKT-011 | wrong_item | Escalated | 100% | 5 | Wrong colour + >$200 |
+| TKT-012 | cancellation | Resolved | 100% | 7 | Cancelled + refund processed |
+| TKT-013 | return | Resolved | 100% | 6 | Expired return denied |
+| TKT-014 | return | Escalated | 100% | 5 | >$200 supervisor approval |
+| TKT-015 | damage_claim | Escalated | 100% | 4 | Replacement → fulfilment |
+| TKT-016 | refund | Resolved | 82.5% | 3 | Unknown customer handled |
+| TKT-017 | refund | Resolved | 100% | 5 | Non-existent order denied |
+| TKT-018 | refund | Escalated | 78.7% | 3 | Social engineering → Trust & Safety |
+| TKT-019 | general_faq | Resolved | 100% | 3 | Policy answer from KB |
+| TKT-020 | damage_claim | Resolved | 82.5% | 3 | Damage acknowledged |
