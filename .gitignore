@@ -1,0 +1,7 @@
+# Environment & secrets
+.env
+
+# Output files (generated at runtime)
+output/
+__pycache__/
+*.pyc
