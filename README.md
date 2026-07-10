@@ -29,7 +29,7 @@ The Autonomous Support Resolution Agent automates this workflow using LLMs, ReAc
 ## Project Structure
 
 ```text
-ksolves/
+.
 ├── main.py                     # Entry point — CLI, async runner, .env loading
 ├── agent/
 │   ├── agent_loop.py           # ReAct reasoning loop (Think → Decide → Act → Observe)
@@ -71,7 +71,7 @@ ksolves/
 ### 1. Clone the Repository
 ```bash
 git clone <repo-url>
-cd ksolves
+cd Autonomous-Support-Resolution-Agent-
 ```
 
 ### 2. Install Dependencies
