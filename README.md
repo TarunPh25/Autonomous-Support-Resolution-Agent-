@@ -1,24 +1,13 @@
 # Autonomous Support Resolution Agent
 
-A production-grade, hybrid AI agent that resolves customer support tickets end-to-end using multi-step reasoning, tool usage, policy-aware decisions, and structured audit logging.
+> A production-grade, hybrid AI agent that resolves customer support tickets end-to-end using multi-step reasoning, tool usage, policy-aware decisions, and structured audit logging.
 
-## Problem Statement
-
-Customer support teams spend a significant amount of time manually reviewing customer tickets to:
-- Understand customer issues
-- Retrieve order and customer information
-- Verify refund eligibility
-- Search company policies
-- Decide whether to resolve or escalate
-- Draft professional customer responses
-- Maintain audit logs for compliance
-
-The Autonomous Support Resolution Agent automates this workflow using LLMs, ReAct reasoning, tool calling, and policy-aware decision making, enabling fast, transparent, and reliable customer support automation.
+---
 
 ## Tech Stack
 
 | Component | Technology | Purpose |
-|-----------|------------|---------|
+|-----------|-----------|---------|
 | Language | Python 3.10+ | Core implementation |
 | Data Models | Pydantic v2 | Input/output validation for all tools |
 | Async Runtime | asyncio | Concurrent ticket processing |
@@ -26,10 +15,12 @@ The Autonomous Support Resolution Agent automates this workflow using LLMs, ReAc
 | Env Management | python-dotenv | Secure API key storage |
 | Architecture | ReAct Loop + Goal-Driven Planner | Multi-step agentic reasoning |
 
+---
+
 ## Project Structure
 
-```text
-.
+```
+ksolves/
 ├── main.py                     # Entry point — CLI, async runner, .env loading
 ├── agent/
 │   ├── agent_loop.py           # ReAct reasoning loop (Think → Decide → Act → Observe)
@@ -66,24 +57,30 @@ The Autonomous Support Resolution Agent automates this workflow using LLMs, ReAc
 └── README.md                   # This file
 ```
 
+---
+
 ## Setup Instructions
 
 ### 1. Clone the Repository
+
 ```bash
 git clone <repo-url>
-cd Autonomous-Support-Resolution-Agent-
+cd ksolves
 ```
 
 ### 2. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
+
 This installs:
 - `pydantic>=2.0` — data validation
 - `groq>=0.4.0` — LLM API client (optional)
 - `python-dotenv>=1.0.0` — environment variable loading
 
 ### 3. Configure Environment (Optional — for LLM mode)
+
 ```bash
 # Copy the example env file
 cp .env.example .env
@@ -93,21 +90,27 @@ cp .env.example .env
 GROQ_API_KEY=gsk_your_actual_key_here
 AGENT_MODE=llm
 ```
-*Note: The system works fully without an API key in deterministic mode. LLM mode is optional.*
+
+> **Note:** The system works fully without an API key in deterministic mode. LLM mode is optional.
+
+---
 
 ## How to Run the Agent
 
-**Basic Run (Deterministic Mode — no API key needed)**
+### Basic Run (Deterministic Mode — no API key needed)
+
 ```bash
 python main.py
 ```
 
-**LLM-Assisted Mode (requires GROQ_API_KEY in .env)**
+### LLM-Assisted Mode (requires GROQ_API_KEY in .env)
+
 ```bash
 python main.py --mode llm
 ```
 
 ### All CLI Options
+
 | Flag | Default | Description |
 |------|---------|-------------|
 | `--tickets N` | All (20) | Process first N tickets only |
@@ -116,6 +119,7 @@ python main.py --mode llm
 | `--verbose` | Off | Enable debug-level logging |
 
 ### Examples
+
 ```bash
 # Process 5 tickets with debug logging
 python main.py --tickets 5 --verbose
@@ -127,7 +131,10 @@ python main.py --mode llm --concurrency 3
 python main.py --tickets 3 --concurrency 1
 ```
 
-### Output Files
+---
+
+## Output Files
+
 After running, the following files are generated:
 
 | File | Description |
@@ -136,89 +143,34 @@ After running, the following files are generated:
 | `output/combined_audit_log.json` | All 20 tickets in one JSON file |
 | `output/agent.log` | Full execution log (human-readable) |
 
+---
+
 ## System Architecture
 
-```text
-                         +----------------------+
-                         |   Customer Ticket    |
-                         |   (tickets.json)     |
-                         +----------+-----------+
-                                    |
-                                    ▼
-                           main.py (Entry Point)
-                                    |
-                                    ▼
-                     Decision Engine / Agent Loop
-                     (Think → Decide → Act → Observe)
-                                    |
-            ------------------------------------------------
-            |                                              |
-            ▼                                              ▼
-     Goal Generation                               LLM (Optional)
-                                                    Groq LLaMA 3.3
-                                                    (llm_client.py)
-            |                                              |
-            -----------------------+------------------------
-                                    |
-                                    ▼
-                           Tool Registry
-                     (Validation + Dispatch)
-                                    |
-      --------------------------------------------------------------------
-      |           |           |          |          |          |           |
-      ▼           ▼           ▼          ▼          ▼          ▼           ▼
- Order Tool   Customer   Product Tool   KB Tool   Refund   Communication
- (order.py)   Tool       (product.py)   Search    Tool      Tool
-              (customer.py)             (kb.py)   (refund.py) (communication.py)
-      |           |           |          |          |          |
-      ----------------------------------------------------------
-                                    |
-                                    ▼
-                           JSON Data Sources
-      ----------------------------------------------------------------
-      |                     |                    |                    |
-      ▼                     ▼                    ▼                    ▼
- orders.json      customers.json      products.json     knowledge_base.json
-                                               |
-                                               ▼
-                                      customer_profiles.json
-                                    |
-                                    ▼
-                         Policy-Based Decision Making
-                                    |
-                                    ▼
-                     Confidence Score + Final Resolution
-                                    |
-                     -----------------------------------
-                     |                                 |
-                     ▼                                 ▼
-              Customer Reply                 Escalation (if needed)
-                                    |
-                                    ▼
-                        Structured Audit Logging
-                                    |
-                                    ▼
-                            audit_log.json
+The agent follows a **ReAct (Reason + Act)** pattern with a **goal-driven planner**:
+
+```
+Ticket → Classify → Generate Goals → [THINK → DECIDE → ACT → OBSERVE] × N → Resolve/Escalate
 ```
 
-The agent follows a ReAct (Reason + Act) pattern with a goal-driven planner:
-
-`Ticket → Classify → Generate Goals → [THINK → DECIDE → ACT → OBSERVE] × N → Resolve/Escalate`
-
 ### Core Components
-- **Agent Loop** (`agent_loop.py`) — Orchestrates the ReAct reasoning loop
-- **Decision Engine** (`decision_engine.py`) — Goal-driven planner that selects the next action
-- **Tool Registry** (`tool_registry.py`) — Validates inputs/outputs and wraps tools with retry logic
-- **8 Tools** — Order, Customer, Product, Knowledge Base, Refund Eligibility, Issue Refund, Send Reply, Escalate
-- **LLM Client** (`llm_client.py`) — Optional Groq API wrapper for enhanced classification, reasoning, and reply composition
+
+1. **Agent Loop** (`agent_loop.py`) — Orchestrates the ReAct reasoning loop
+2. **Decision Engine** (`decision_engine.py`) — Goal-driven planner that selects the next action
+3. **Tool Registry** (`tool_registry.py`) — Validates inputs/outputs and wraps tools with retry logic
+4. **8 Tools** — Order, Customer, Product, Knowledge Base, Refund Eligibility, Issue Refund, Send Reply, Escalate
+5. **LLM Client** (`llm_client.py`) — Optional Groq API wrapper for enhanced classification, reasoning, and reply composition
 
 ### Hybrid Architecture
-- Deterministic planner is the source of truth for all decisions
-- LLM (optional) enhances classification accuracy, reasoning explanations, and reply quality
-- LLM NEVER controls tool selection, escalation, or refund approval
+
+- **Deterministic planner** is the source of truth for all decisions
+- **LLM** (optional) enhances classification accuracy, reasoning explanations, and reply quality
+- LLM **NEVER** controls tool selection, escalation, or refund approval
 - If LLM fails → silent fallback to deterministic mode
 
-*See `architecture.png` for the full visual diagram.*
+See `architecture.png` for the full visual diagram.
+
+---
 
 ## Key Features
 
@@ -237,9 +189,11 @@ The agent follows a ReAct (Reason + Act) pattern with a goal-driven planner:
 | **Failure Recovery** | Exponential backoff retry with jitter |
 | **Hybrid LLM** | Optional Groq/LLaMA 3 for enhanced quality |
 
+---
+
 ## Demo Results (20 Tickets)
 
-```text
+```
 Total Tickets:   20
 Resolved:        14  (70%)
 Escalated:        6  (30%)
@@ -251,7 +205,7 @@ Processing Time:  <1s (deterministic) / ~90s (LLM with rate limits)
 ```
 
 | Ticket | Category | Status | Confidence | Steps | Key Behavior |
-|--------|----------|--------|------------|-------|--------------|
+|--------|----------|--------|------------|-------|-------------|
 | TKT-001 | refund | Resolved | 100% | 7 | Full refund $129.99, TXN issued |
 | TKT-002 | return | Escalated | 100% | 5 | >$200 → supervisor required |
 | TKT-003 | damage_claim | Escalated | 100% | 4 | Replacement → fulfilment team |
