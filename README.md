@@ -1,4 +1,4 @@
-# Autonomous Support Resolution Agent Web Suite
+# Autonomous Support Resolution Agent
 
 > A production-grade, hybrid AI agent that resolves customer support tickets end-to-end using multi-step reasoning, tool usage, policy-aware decisions, and structured audit logging. Includes a beautiful FastAPI-powered web dashboard for real-time visualization and control.
 
