@@ -1,0 +1,54 @@
+21:19:38 | asyncio              | DEBUG   | Using proactor: IocpProactor
+21:19:38 | agent.main           | INFO    | Loaded 2 tickets for processing
+21:19:38 | agent.registry       | INFO    | Registered tool: get_order
+21:19:38 | agent.registry       | INFO    | Registered tool: get_customer
+21:19:38 | agent.registry       | INFO    | Registered tool: get_product
+21:19:38 | agent.registry       | INFO    | Registered tool: search_knowledge_base
+21:19:38 | agent.registry       | INFO    | Registered tool: check_refund_eligibility
+21:19:38 | agent.registry       | INFO    | Registered tool: issue_refund
+21:19:38 | agent.registry       | INFO    | Registered tool: send_reply
+21:19:38 | agent.registry       | INFO    | Registered tool: escalate
+21:19:38 | agent.main           | INFO    | Tool registry created with 8 tools: ['get_order', 'get_customer', 'get_product', 'search_knowledge_base', 'check_refund_eligibility', 'issue_refund', 'send_reply', 'escalate']
+21:19:38 | agent.main           | INFO    | Concurrency limit: 1
+21:19:38 | agent.main           | INFO    | Mode: DETERMINISTIC
+21:19:38 | agent.loop           | INFO    | [TKT-001] Category: refund, Flags: [], Order: ORD-1001, Class conf: 0.65 [DET]
+21:19:38 | agent.loop           | INFO    | [TKT-001] Generated 6 goals
+21:19:38 | agent.loop           | INFO    | [TKT-001] Step 1: get_order({'order_id': 'ORD-1001'})
+21:19:38 | agent.tools.order    | INFO    | Loaded 15 orders from C:\Users\bhati\Downloads\hackathon2026-GurkiratSingh-main\hackathon2026-GurkiratSingh-main\customers.json
+21:19:38 | agent.logger         | INFO    | [TKT-001] Step 1: get_order (OK) -- Analyzing ticket TKT-001: Subject: 'Refund request for headphones'. Classified a...
+21:19:38 | agent.loop           | INFO    | [TKT-001] Step 2: get_customer({'email': 'alice.turner@email.com'})
+21:19:38 | agent.tools.customer | INFO    | Loaded 10 customer profiles
+21:19:38 | agent.logger         | INFO    | [TKT-001] Step 2: get_customer (OK) -- Step 2 analysis for TKT-001: Order ORD-1001: status=delivered, amount=$129.99, p...
+21:19:38 | agent.loop           | INFO    | [TKT-001] Step 3: search_knowledge_base({'query': 'refund policy eligibility'})
+21:19:38 | agent.tools.kb       | INFO    | Loaded 12 KB articles
+21:19:38 | agent.logger         | INFO    | [TKT-001] Step 3: search_knowledge_base (OK) -- Step 3 analysis for TKT-001: Customer identified: Alice Turner (tier: premium). ...
+21:19:38 | agent.loop           | INFO    | [TKT-001] Step 4: check_refund_eligibility({'order_id': 'ORD-1001'})
+21:19:38 | agent.logger         | INFO    | [TKT-001] Step 4: check_refund_eligibility (OK) -- Step 4 analysis for TKT-001: Customer identified: Alice Turner (tier: premium). ...
+21:19:38 | agent.loop           | INFO    | [TKT-001] Step 5: issue_refund({'order_id': 'ORD-1001', 'amount': 129.99})
+21:19:38 | agent.tools.refund   | INFO    | issue_refund(ORD-1001): SUCCESS — $129.99 refunded, TXN: TXN-04A0A789
+21:19:38 | agent.logger         | INFO    | [TKT-001] Step 5: issue_refund (OK) -- Step 5 analysis for TKT-001: Customer identified: Alice Turner (tier: premium). ...
+21:19:38 | agent.loop           | INFO    | [TKT-001] Step 6: get_product({'product_id': 'P001'})
+21:19:38 | agent.tools.product  | INFO    | Loaded 8 products
+21:19:38 | agent.logger         | INFO    | [TKT-001] Step 6: get_product (OK) -- Step 6 analysis for TKT-001: Customer identified: Alice Turner (tier: premium). ...
+21:19:38 | agent.loop           | INFO    | [TKT-001] Step 7: send_reply({'ticket_id': 'TKT-001', 'message': "Hi Alice,\n\nThank you for reaching out to ShopWave Support.\n\nWe've processed your refund of $129.99 for order ORD-1001. Transaction ID: TXN-04A0A789.\n\nPlease allow 5-7 business days for the amount to appear in your account.\n\nIs there anything else we can help with?\n\nBest regards,\nShopWave Support"})
+21:19:38 | agent.tools.communication | INFO    | send_reply(TKT-001): Sent message MSG-F9341C6C
+21:19:38 | agent.logger         | INFO    | [TKT-001] Step 7: send_reply (OK) -- Step 7 analysis for TKT-001: Customer identified: Alice Turner (tier: premium). ...
+21:19:38 | agent.logger         | INFO    | [TKT-001] Audit log written to output/audit_logs\TKT-001.json
+21:19:38 | agent.loop           | INFO    | [TKT-001] ── DONE: resolved | Confidence: 1.00 | Steps: 7 | Tools: 7
+21:19:38 | agent.loop           | INFO    | [TKT-002] Category: return, Flags: [], Order: ORD-1002, Class conf: 0.80 [DET]
+21:19:38 | agent.loop           | INFO    | [TKT-002] Generated 6 goals
+21:19:38 | agent.loop           | INFO    | [TKT-002] Step 1: get_order({'order_id': 'ORD-1002'})
+21:19:38 | agent.logger         | INFO    | [TKT-002] Step 1: get_order (OK) -- Analyzing ticket TKT-002: Subject: 'I want to return my watch'. Classified as 'r...
+21:19:38 | agent.loop           | INFO    | [TKT-002] Step 2: get_customer({'email': 'bob.mendes@email.com'})
+21:19:38 | agent.logger         | INFO    | [TKT-002] Step 2: get_customer (OK) -- Step 2 analysis for TKT-002: Order ORD-1002: status=delivered, amount=$249.99, p...
+21:19:38 | agent.loop           | INFO    | [TKT-002] Step 3: search_knowledge_base({'query': 'return policy window'})
+21:19:38 | agent.logger         | INFO    | [TKT-002] Step 3: search_knowledge_base (OK) -- Step 3 analysis for TKT-002: Customer identified: Bob Mendes (tier: standard). O...
+21:19:38 | agent.loop           | INFO    | [TKT-002] Step 4: check_refund_eligibility({'order_id': 'ORD-1002'})
+21:19:38 | agent.logger         | INFO    | [TKT-002] Step 4: check_refund_eligibility (OK) -- Step 4 analysis for TKT-002: Customer identified: Bob Mendes (tier: standard). O...
+21:19:38 | agent.loop           | INFO    | [TKT-002] Step 5: escalate({'ticket_id': 'TKT-002', 'summary': 'Ticket TKT-002 requires human intervention. Reason: Refund amount ($249.99) exceeds $200 — requires supervisor approval. Category: return. Customer: Bob Mendes (tier: standard). Order: ORD-1002 — status: delivered, amount: $249.99. Actions taken: get_order, get_customer, search_knowledge_base, check_refund_eligibility. Recommended: Review ticket and take appropriate action.', 'priority': 'high'})
+21:19:38 | agent.tools.communication | INFO    | escalate(TKT-002): Escalated as high priority → Tier 2 Support [ESC-266D7FF0]
+21:19:38 | agent.logger         | INFO    | [TKT-002] Step 5: escalate (OK) -- Step 5 analysis for TKT-002: Customer identified: Bob Mendes (tier: standard). O...
+21:19:38 | agent.logger         | INFO    | [TKT-002] Audit log written to output/audit_logs\TKT-002.json
+21:19:38 | agent.loop           | INFO    | [TKT-002] ── DONE: escalated | Confidence: 1.00 | Steps: 5 | Tools: 5
+21:19:38 | agent.main           | INFO    | All 2 tickets processed in 0.56s
+21:19:38 | agent.main           | INFO    | Combined audit log saved to output\combined_audit_log.json
