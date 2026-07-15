@@ -1,6 +1,6 @@
-# Autonomous Support Resolution Agent
+# Autonomous Support Resolution Agent Web Suite
 
-> A production-grade, hybrid AI agent that resolves customer support tickets end-to-end using multi-step reasoning, tool usage, policy-aware decisions, and structured audit logging.
+> A production-grade, hybrid AI agent that resolves customer support tickets end-to-end using multi-step reasoning, tool usage, policy-aware decisions, and structured audit logging. Includes a beautiful FastAPI-powered web dashboard for real-time visualization and control.
 
 ---
 
@@ -20,8 +20,10 @@
 ## Project Structure
 
 ```
-ksolves/
+Internship-main/
 ├── main.py                     # Entry point — CLI, async runner, .env loading
+├── server.py                   # FastAPI Web Server for Dashboard
+├── static/                     # Web dashboard assets (HTML, JS, CSS)
 ├── agent/
 │   ├── agent_loop.py           # ReAct reasoning loop (Think → Decide → Act → Observe)
 │   ├── decision_engine.py      # Goal-driven planner + hybrid LLM integration
@@ -64,14 +66,14 @@ ksolves/
 ### 1. Clone the Repository
 
 ```bash
-git clone <repo-url>
-cd ksolves
+git clone https://github.com/TarunPh25/Autonomous-Support-Resolution-Agent-.git
+cd Autonomous-Support-Resolution-Agent-
 ```
 
 ### 2. Install Dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt fastapi uvicorn
 ```
 
 This installs:
@@ -97,7 +99,20 @@ AGENT_MODE=llm
 
 ## How to Run the Agent
 
-### Basic Run (Deterministic Mode — no API key needed)
+### Running the Web Dashboard (Recommended)
+
+To launch the FastAPI web server and access the interactive dashboard:
+
+```bash
+python server.py
+```
+Then, open your web browser and navigate to: **http://localhost:8000**
+
+You can configure the Groq LLM API directly from the settings panel in the web interface.
+
+---
+
+### Basic Run (CLI Deterministic Mode — no API key needed)
 
 ```bash
 python main.py
