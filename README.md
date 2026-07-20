@@ -162,6 +162,71 @@ After running, the following files are generated:
 
 ## System Architecture
 
+![System Architecture](https://github.com/TarunPh25/Autonomous-Support-Resolution-Agent-/blob/main/architecture.png)
+
+```text
+                         +----------------------+
+                         |   Customer Ticket    |
+                         |   (tickets.json)     |
+                         +----------+-----------+
+                                    |
+                                    ▼
+                           main.py (Entry Point)
+                                    |
+                                    ▼
+                     Decision Engine / Agent Loop
+                     (Think → Decide → Act → Observe)
+                                    |
+            ------------------------------------------------
+            |                                              |
+            ▼                                              ▼
+     Goal Generation                               LLM (Optional)
+                                                    Groq LLaMA 3.3
+                                                    (llm_client.py)
+            |                                              |
+            -----------------------+------------------------
+                                    |
+                                    ▼
+                           Tool Registry
+                     (Validation + Dispatch)
+                                    |
+      --------------------------------------------------------------------
+      |           |           |          |          |          |           |
+      ▼           ▼           ▼          ▼          ▼          ▼           ▼
+ Order Tool   Customer   Product Tool   KB Tool   Refund   Communication
+ (order.py)   Tool       (product.py)   Search    Tool      Tool
+              (customer.py)             (kb.py)   (refund.py) (communication.py)
+      |           |           |          |          |          |
+      ----------------------------------------------------------
+                                    |
+                                    ▼
+                           JSON Data Sources
+      ----------------------------------------------------------------
+      |                     |                    |                    |
+      ▼                     ▼                    ▼                    ▼
+ orders.json      customers.json      products.json     knowledge_base.json
+                                               |
+                                               ▼
+                                      customer_profiles.json
+                                    |
+                                    ▼
+                         Policy-Based Decision Making
+                                    |
+                                    ▼
+                     Confidence Score + Final Resolution
+                                    |
+                     -----------------------------------
+                     |                                 |
+                     ▼                                 ▼
+              Customer Reply                 Escalation (if needed)
+                                    |
+                                    ▼
+                        Structured Audit Logging
+                                    |
+                                    ▼
+                            audit_log.json
+```
+
 The agent follows a **ReAct (Reason + Act)** pattern with a **goal-driven planner**:
 
 ```
