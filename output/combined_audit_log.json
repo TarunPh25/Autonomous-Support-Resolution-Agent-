@@ -9,21 +9,21 @@
       "confidence_reason": "Confidence 1.00: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(1.00)",
       "total_steps": 7,
       "total_tool_calls": 7,
-      "total_duration_ms": 307.5,
+      "total_duration_ms": 256.61,
       "errors_encountered": 0,
       "flags": []
     },
     "policy_references": [
-      "Standard Return Policy",
       "Damaged Items Policy",
+      "Refund Processing Policy",
       "POL-001 (Standard Return Policy), POL-002 (Refund Processing Policy)",
-      "Refund Processing Policy"
+      "Standard Return Policy"
     ],
-    "resolution_message": "Hi Alice,\n\nThank you for reaching out to ShopWave Support.\n\nWe've processed your refund of $129.99 for order ORD-1001. Transaction ID: TXN-04A0A789.\n\nPlease allow 5-7 business days for the amount to appear in your account.\n\nIs there anything else we can help with?\n\nBest regards,\nShopWave Support",
+    "resolution_message": "Hi Alice,\n\nThank you for reaching out to ShopWave Support.\n\nWe've processed your refund of $129.99 for order ORD-1001. Transaction ID: TXN-CC640085.\n\nPlease allow 5-7 business days for the amount to appear in your account.\n\nIs there anything else we can help with?\n\nBest regards,\nShopWave Support",
     "steps": [
       {
         "step": 1,
-        "timestamp": "2026-07-14T15:49:38.449415+00:00",
+        "timestamp": "2026-07-20T13:49:30.113037+00:00",
         "thought": "Analyzing ticket TKT-001: Subject: 'Refund request for headphones'. Classified as 'refund'. Found order ID: ORD-1001. Need to gather information to resolve this ticket.",
         "action": "get_order",
         "action_input": {
@@ -44,12 +44,12 @@
         },
         "success": true,
         "reason": "Goal: Retrieve order details for ORD-1001. Priority: 0.9. Using tool: get_order.",
-        "latency_ms": 30.46,
+        "latency_ms": 33.89,
         "retries": 0
       },
       {
         "step": 2,
-        "timestamp": "2026-07-14T15:49:38.490272+00:00",
+        "timestamp": "2026-07-20T13:49:30.146818+00:00",
         "thought": "Step 2 analysis for TKT-001: Order ORD-1001: status=delivered, amount=$129.99, product=P001. 4 information goal(s) still pending.",
         "action": "get_customer",
         "action_input": {
@@ -68,12 +68,12 @@
         },
         "success": true,
         "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
-        "latency_ms": 39.63,
+        "latency_ms": 33.56,
         "retries": 0
       },
       {
         "step": 3,
-        "timestamp": "2026-07-14T15:49:38.526719+00:00",
+        "timestamp": "2026-07-20T13:49:30.187859+00:00",
         "thought": "Step 3 analysis for TKT-001: Customer identified: Alice Turner (tier: premium). Order ORD-1001: status=delivered, amount=$129.99, product=P001. 3 information goal(s) still pending.",
         "action": "search_knowledge_base",
         "action_input": {
@@ -107,12 +107,12 @@
         },
         "success": true,
         "reason": "Goal: Search knowledge base for relevant policies: refund policy eligibility. Priority: 0.8. Using tool: search_knowledge_base.",
-        "latency_ms": 36.45,
+        "latency_ms": 40.86,
         "retries": 0
       },
       {
         "step": 4,
-        "timestamp": "2026-07-14T15:49:38.593306+00:00",
+        "timestamp": "2026-07-20T13:49:30.235044+00:00",
         "thought": "Step 4 analysis for TKT-001: Customer identified: Alice Turner (tier: premium). Order ORD-1001: status=delivered, amount=$129.99, product=P001. Relevant policies found: Refund Processing Policy, Standard Return Policy. 2 information goal(s) still pending.",
         "action": "check_refund_eligibility",
         "action_input": {
@@ -127,12 +127,12 @@
         },
         "success": true,
         "reason": "Goal: Check if order is eligible for refund based on policies. Priority: 0.8. Using tool: check_refund_eligibility.",
-        "latency_ms": 65.21,
+        "latency_ms": 47.0,
         "retries": 0
       },
       {
         "step": 5,
-        "timestamp": "2026-07-14T15:49:38.678717+00:00",
+        "timestamp": "2026-07-20T13:49:30.302862+00:00",
         "thought": "Step 5 analysis for TKT-001: Customer identified: Alice Turner (tier: premium). Order ORD-1001: status=delivered, amount=$129.99, product=P001. Refund eligibility: eligible -- Order is delivered and within return window. Eligible for refund.. Relevant policies found: Refund Processing Policy, Standard Return Policy. 2 information goal(s) still pending.",
         "action": "issue_refund",
         "action_input": {
@@ -141,18 +141,18 @@
         },
         "observation": {
           "success": true,
-          "transaction_id": "TXN-04A0A789",
+          "transaction_id": "TXN-CC640085",
           "refunded_amount": 129.99,
-          "message": "Refund of $129.99 successfully processed. Transaction ID: TXN-04A0A789. Customer will receive funds within 5-7 business days."
+          "message": "Refund of $129.99 successfully processed. Transaction ID: TXN-CC640085. Customer will receive funds within 5-7 business days."
         },
         "success": true,
         "reason": "Goal: Issue refund of $129.99 for ORD-1001. Priority: 0.8. Using tool: issue_refund.",
-        "latency_ms": 81.09,
+        "latency_ms": 67.62,
         "retries": 0
       },
       {
         "step": 6,
-        "timestamp": "2026-07-14T15:49:38.708069+00:00",
+        "timestamp": "2026-07-20T13:49:30.320034+00:00",
         "thought": "Step 6 analysis for TKT-001: Customer identified: Alice Turner (tier: premium). Order ORD-1001: status=delivered, amount=$129.99, product=P001. Refund eligibility: eligible -- Order is delivered and within return window. Eligible for refund.. Relevant policies found: Refund Processing Policy, Standard Return Policy. 1 information goal(s) still pending.",
         "action": "get_product",
         "action_input": {
@@ -170,26 +170,26 @@
         },
         "success": true,
         "reason": "Goal: Retrieve product details for return window and warranty info. Priority: 0.7. Using tool: get_product.",
-        "latency_ms": 28.68,
+        "latency_ms": 16.98,
         "retries": 0
       },
       {
         "step": 7,
-        "timestamp": "2026-07-14T15:49:38.723952+00:00",
+        "timestamp": "2026-07-20T13:49:30.334807+00:00",
         "thought": "Step 7 analysis for TKT-001: Customer identified: Alice Turner (tier: premium). Order ORD-1001: status=delivered, amount=$129.99, product=P001. Product: ProSound Wireless Headphones -- return window: 30 days, warranty: 12 months. Refund eligibility: eligible -- Order is delivered and within return window. Eligible for refund.. Relevant policies found: Refund Processing Policy, Standard Return Policy. All information gathered. Ready to decide and respond.",
         "action": "send_reply",
         "action_input": {
           "ticket_id": "TKT-001",
-          "message": "Hi Alice,\n\nThank you for reaching out to ShopWave Support.\n\nWe've processed your refund of $129.99 for order ORD-1001. Transaction ID: TXN-04A0A789.\n\nPlease allow 5-7 business days for the amount to appear in your account.\n\nIs there anything else we can help with?\n\nBest regards,\nShopWave Support"
+          "message": "Hi Alice,\n\nThank you for reaching out to ShopWave Support.\n\nWe've processed your refund of $129.99 for order ORD-1001. Transaction ID: TXN-CC640085.\n\nPlease allow 5-7 business days for the amount to appear in your account.\n\nIs there anything else we can help with?\n\nBest regards,\nShopWave Support"
         },
         "observation": {
           "success": true,
-          "message_id": "MSG-F9341C6C",
-          "timestamp": "2026-07-14T15:49:38.723952+00:00"
+          "message_id": "MSG-DA5F78E4",
+          "timestamp": "2026-07-20T13:49:30.334608+00:00"
         },
         "success": true,
         "reason": "All information gathered, composing and sending final response to customer.",
-        "latency_ms": 14.97,
+        "latency_ms": 14.6,
         "retries": 0
       }
     ],
@@ -212,7 +212,7 @@
         "llm_used": false
       }
     },
-    "generated_at": "2026-07-14T15:49:38.725180+00:00"
+    "generated_at": "2026-07-20T13:49:30.334904+00:00"
   },
   {
     "ticket_id": "TKT-002",
@@ -224,21 +224,21 @@
       "confidence_reason": "Confidence 1.00: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(1.00)",
       "total_steps": 5,
       "total_tool_calls": 5,
-      "total_duration_ms": 246.86,
+      "total_duration_ms": 145.09,
       "errors_encountered": 0,
       "flags": []
     },
     "policy_references": [
-      "Product-Specific Return Rules",
       "Damaged Items Policy",
       "POL-001 (Standard Return Policy), POL-002 (Refund Processing Policy)",
+      "Product-Specific Return Rules",
       "Standard Return Policy"
     ],
     "resolution_message": "Ticket TKT-002 requires human intervention. Reason: Refund amount ($249.99) exceeds $200 — requires supervisor approval. Category: return. Customer: Bob Mendes (tier: standard). Order: ORD-1002 — status: delivered, amount: $249.99. Actions taken: get_order, get_customer, search_knowledge_base, check_refund_eligibility. Recommended: Review ticket and take appropriate action.",
     "steps": [
       {
         "step": 1,
-        "timestamp": "2026-07-14T15:49:38.787403+00:00",
+        "timestamp": "2026-07-20T13:49:30.106071+00:00",
         "thought": "Analyzing ticket TKT-002: Subject: 'I want to return my watch'. Classified as 'return'. Found order ID: ORD-1002. Need to gather information to resolve this ticket.",
         "action": "get_order",
         "action_input": {
@@ -259,12 +259,12 @@
         },
         "success": true,
         "reason": "Goal: Retrieve order details for ORD-1002. Priority: 0.9. Using tool: get_order.",
-        "latency_ms": 57.75,
+        "latency_ms": 25.62,
         "retries": 0
       },
       {
         "step": 2,
-        "timestamp": "2026-07-14T15:49:38.841158+00:00",
+        "timestamp": "2026-07-20T13:49:30.129896+00:00",
         "thought": "Step 2 analysis for TKT-002: Order ORD-1002: status=delivered, amount=$249.99, product=P006. 4 information goal(s) still pending.",
         "action": "get_customer",
         "action_input": {
@@ -283,12 +283,12 @@
         },
         "success": true,
         "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
-        "latency_ms": 53.75,
+        "latency_ms": 23.62,
         "retries": 0
       },
       {
         "step": 3,
-        "timestamp": "2026-07-14T15:49:38.872533+00:00",
+        "timestamp": "2026-07-20T13:49:30.157342+00:00",
         "thought": "Step 3 analysis for TKT-002: Customer identified: Bob Mendes (tier: standard). Order ORD-1002: status=delivered, amount=$249.99, product=P006. 3 information goal(s) still pending.",
         "action": "search_knowledge_base",
         "action_input": {
@@ -322,12 +322,12 @@
         },
         "success": true,
         "reason": "Goal: Search knowledge base for relevant policies: return policy window. Priority: 0.8. Using tool: search_knowledge_base.",
-        "latency_ms": 31.38,
+        "latency_ms": 27.25,
         "retries": 0
       },
       {
         "step": 4,
-        "timestamp": "2026-07-14T15:49:38.943409+00:00",
+        "timestamp": "2026-07-20T13:49:30.205056+00:00",
         "thought": "Step 4 analysis for TKT-002: Customer identified: Bob Mendes (tier: standard). Order ORD-1002: status=delivered, amount=$249.99, product=P006. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. 2 information goal(s) still pending.",
         "action": "check_refund_eligibility",
         "action_input": {
@@ -342,12 +342,12 @@
         },
         "success": true,
         "reason": "Goal: Check if order is eligible for refund based on policies. Priority: 0.8. Using tool: check_refund_eligibility.",
-        "latency_ms": 69.66,
+        "latency_ms": 47.44,
         "retries": 0
       },
       {
         "step": 5,
-        "timestamp": "2026-07-14T15:49:38.974452+00:00",
+        "timestamp": "2026-07-20T13:49:30.224917+00:00",
         "thought": "Step 5 analysis for TKT-002: Customer identified: Bob Mendes (tier: standard). Order ORD-1002: status=delivered, amount=$249.99, product=P006. Refund eligibility: eligible -- Order is delivered and within return window. Eligible for refund.. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. 1 information goal(s) still pending.",
         "action": "escalate",
         "action_input": {
@@ -357,13 +357,13 @@
         },
         "observation": {
           "success": true,
-          "escalation_id": "ESC-266D7FF0",
+          "escalation_id": "ESC-BDB673BC",
           "assigned_team": "Tier 2 Support",
           "priority": "high"
         },
         "success": true,
         "reason": "Escalating because: Refund amount ($249.99) exceeds $200 — requires supervisor approval",
-        "latency_ms": 29.68,
+        "latency_ms": 19.63,
         "retries": 0
       }
     ],
@@ -386,6 +386,3104 @@
         "llm_used": false
       }
     },
-    "generated_at": "2026-07-14T15:49:38.975302+00:00"
+    "generated_at": "2026-07-20T13:49:30.225018+00:00"
+  },
+  {
+    "ticket_id": "TKT-003",
+    "category": "exchange",
+    "customer_tier": "premium",
+    "processing_summary": {
+      "final_status": "escalated",
+      "confidence": 1.0,
+      "confidence_reason": "Confidence 1.00: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(1.00)",
+      "total_steps": 4,
+      "total_tool_calls": 4,
+      "total_duration_ms": 109.92,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [
+      "Exchange Policy",
+      "Wrong Item Delivered Policy",
+      "Standard Return Policy"
+    ],
+    "resolution_message": "Ticket TKT-003 requires human intervention. Reason: Customer requests replacement/exchange — requires fulfilment team. Category: exchange. Customer: Carol Nguyen (tier: premium). Order: ORD-1003 — status: delivered, amount: $199.99. Actions taken: get_order, get_customer, search_knowledge_base. Recommended: Process exchange through fulfilment team.",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.128895+00:00",
+        "thought": "Analyzing ticket TKT-003: Subject: 'Coffee maker stopped working'. Classified as 'exchange'. Found order ID: ORD-1003. Need to gather information to resolve this ticket.",
+        "action": "get_order",
+        "action_input": {
+          "order_id": "ORD-1003"
+        },
+        "observation": {
+          "order_id": "ORD-1003",
+          "customer_id": "C003",
+          "product_id": "P003",
+          "quantity": 1,
+          "amount": 199.99,
+          "status": "delivered",
+          "order_date": "2024-01-05",
+          "delivery_date": "2024-01-09",
+          "return_deadline": "2024-02-08",
+          "refund_status": null,
+          "notes": "Return window has expired. Warranty still active until 2026-01-09."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve order details for ORD-1003. Priority: 0.9. Using tool: get_order.",
+        "latency_ms": 47.31,
+        "retries": 0
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.162221+00:00",
+        "thought": "Step 2 analysis for TKT-003: Order ORD-1003: status=delivered, amount=$199.99, product=P003. 3 information goal(s) still pending.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "carol.nguyen@email.com"
+        },
+        "observation": {
+          "customer_id": "C003",
+          "email": "carol.nguyen@email.com",
+          "name": "Carol Nguyen",
+          "tier": "premium",
+          "account_age_months": 18,
+          "total_orders": 4,
+          "total_spent": 579.96,
+          "open_tickets": 0,
+          "notes": "Regular buyer, good payment history."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 32.99,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.176682+00:00",
+        "thought": "Step 3 analysis for TKT-003: Customer identified: Carol Nguyen (tier: premium). Order ORD-1003: status=delivered, amount=$199.99, product=P003. 2 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "exchange policy replacement"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-008",
+              "title": "Exchange Policy",
+              "category": "exchanges",
+              "content": "Exchanges are available for items within the return window. The customer may exchange for the same product in a different size, color, or variant. If the replacement item costs more, the customer pays the difference. If it costs less, the difference is refunded. Exchanges for defective items are processed as warranty claims if outside the return window. Exchanges must be escalated to fulfilment team for processing — agents cannot directly fulfil exchanges.",
+              "relevance_score": 1.0
+            },
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 0.25
+            },
+            {
+              "policy_id": "POL-006",
+              "title": "Wrong Item Delivered Policy",
+              "category": "wrong_item",
+              "content": "If a customer receives the wrong item (wrong product, wrong color, wrong size), they are eligible for a full refund or exchange regardless of the return window. The customer does not need to return the incorrect item before receiving a replacement or refund. For wrong item cases, check product availability for the correct variant before offering an exchange. If the correct item is not available, issue a full refund.",
+              "relevance_score": 0.25
+            }
+          ],
+          "query": "exchange policy replacement"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: exchange policy replacement. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 14.21,
+        "retries": 0
+      },
+      {
+        "step": 4,
+        "timestamp": "2026-07-20T13:49:30.190393+00:00",
+        "thought": "Step 4 analysis for TKT-003: Customer identified: Carol Nguyen (tier: premium). Order ORD-1003: status=delivered, amount=$199.99, product=P003. Relevant policies found: Exchange Policy, Standard Return Policy. 1 information goal(s) still pending.",
+        "action": "escalate",
+        "action_input": {
+          "ticket_id": "TKT-003",
+          "summary": "Ticket TKT-003 requires human intervention. Reason: Customer requests replacement/exchange — requires fulfilment team. Category: exchange. Customer: Carol Nguyen (tier: premium). Order: ORD-1003 — status: delivered, amount: $199.99. Actions taken: get_order, get_customer, search_knowledge_base. Recommended: Process exchange through fulfilment team.",
+          "priority": "medium"
+        },
+        "observation": {
+          "success": true,
+          "escalation_id": "ESC-C1BE09EB",
+          "assigned_team": "Fulfilment Team",
+          "priority": "medium"
+        },
+        "success": true,
+        "reason": "Escalating because: Customer requests replacement/exchange — requires fulfilment team",
+        "latency_ms": 13.46,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "exchange",
+      "initial_flags": [],
+      "classification_confidence": 0.8,
+      "extracted_order_id": "ORD-1003",
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Retrieve order details for ORD-1003",
+        "Search knowledge base for relevant policies: exchange policy replacement",
+        "Retrieve product details for return window and warranty info",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.190450+00:00"
+  },
+  {
+    "ticket_id": "TKT-004",
+    "category": "wrong_item",
+    "customer_tier": "standard",
+    "processing_summary": {
+      "final_status": "resolved",
+      "confidence": 0.825,
+      "confidence_reason": "Confidence 0.82: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=low(0.30), clarity=high(1.00)",
+      "total_steps": 6,
+      "total_tool_calls": 6,
+      "total_duration_ms": 343.09,
+      "errors_encountered": 0,
+      "flags": [
+        "threatening_language",
+        "urgency",
+        "frustration"
+      ]
+    },
+    "policy_references": [
+      "POL-001 (Standard Return Policy), POL-002 (Refund Processing Policy)"
+    ],
+    "resolution_message": "Hi David,\n\nThank you for reaching out to ShopWave Support.\n\nWe sincerely apologize for sending the wrong item for order ORD-1004. We're arranging to resolve this for you. You don't need to return the incorrect item.\n\nOur fulfilment team will reach out with next steps shortly.\n\nBest regards,\nShopWave Support",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.094837+00:00",
+        "thought": "Analyzing ticket TKT-004: Subject: 'Wrong size delivered'. Classified as 'wrong_item'. Flags detected: threatening_language, urgency, frustration. Found order ID: ORD-1004. Need to gather information to resolve this ticket.",
+        "action": "get_order",
+        "action_input": {
+          "order_id": "ORD-1004"
+        },
+        "observation": {
+          "order_id": "ORD-1004",
+          "customer_id": "C004",
+          "product_id": "P002",
+          "quantity": 1,
+          "amount": 89.99,
+          "status": "delivered",
+          "order_date": "2024-02-20",
+          "delivery_date": "2024-02-24",
+          "return_deadline": "2024-03-25",
+          "refund_status": null,
+          "notes": "Customer requested size exchange via chat but no formal return initiated."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve order details for ORD-1004. Priority: 0.9. Using tool: get_order.",
+        "latency_ms": 12.37,
+        "retries": 0
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.110762+00:00",
+        "thought": "Step 2 analysis for TKT-004: Order ORD-1004: status=delivered, amount=$89.99, product=P002. 4 information goal(s) still pending.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "david.park@email.com"
+        },
+        "observation": {
+          "customer_id": "C004",
+          "email": "david.park@email.com",
+          "name": "David Park",
+          "tier": "standard",
+          "account_age_months": 12,
+          "total_orders": 2,
+          "total_spent": 179.98,
+          "open_tickets": 1,
+          "notes": "Had a sizing issue previously resolved."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 15.55,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.136061+00:00",
+        "thought": "Step 3 analysis for TKT-004: Customer identified: David Park (tier: standard). Order ORD-1004: status=delivered, amount=$89.99, product=P002. 3 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "wrong item delivered policy"
+        },
+        "observation": {
+          "articles": [],
+          "query": "wrong item delivered policy"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: wrong item delivered policy. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 25.11,
+        "retries": 0
+      },
+      {
+        "step": 4,
+        "timestamp": "2026-07-20T13:49:30.384196+00:00",
+        "thought": "Step 4 analysis for TKT-004: Customer identified: David Park (tier: standard). Order ORD-1004: status=delivered, amount=$89.99, product=P002. 2 information goal(s) still pending.",
+        "action": "check_refund_eligibility",
+        "action_input": {
+          "order_id": "ORD-1004"
+        },
+        "observation": {
+          "eligible": true,
+          "reason": "Order is delivered and within return window. Eligible for refund.",
+          "max_refund_amount": 89.99,
+          "policy_reference": "POL-001 (Standard Return Policy), POL-002 (Refund Processing Policy)",
+          "order_status": "delivered"
+        },
+        "success": true,
+        "reason": "Goal: Check if order is eligible for refund based on policies. Priority: 0.8. Using tool: check_refund_eligibility.",
+        "latency_ms": 247.98,
+        "retries": 2
+      },
+      {
+        "step": 5,
+        "timestamp": "2026-07-20T13:49:30.401965+00:00",
+        "thought": "Step 5 analysis for TKT-004: Customer identified: David Park (tier: standard). Order ORD-1004: status=delivered, amount=$89.99, product=P002. Refund eligibility: eligible -- Order is delivered and within return window. Eligible for refund.. 1 information goal(s) still pending.",
+        "action": "get_product",
+        "action_input": {
+          "product_id": "P002"
+        },
+        "observation": {
+          "product_id": "P002",
+          "name": "SwiftRun Pro Running Shoes",
+          "category": "footwear",
+          "price": 89.99,
+          "warranty_months": 0,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Must be unworn and in original packaging. No return if used outdoors."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve product details for return window and warranty info. Priority: 0.7. Using tool: get_product.",
+        "latency_ms": 17.4,
+        "retries": 0
+      },
+      {
+        "step": 6,
+        "timestamp": "2026-07-20T13:49:30.424582+00:00",
+        "thought": "Step 6 analysis for TKT-004: Customer identified: David Park (tier: standard). Order ORD-1004: status=delivered, amount=$89.99, product=P002. Product: SwiftRun Pro Running Shoes -- return window: 30 days, warranty: 0 months. Refund eligibility: eligible -- Order is delivered and within return window. Eligible for refund.. All information gathered. Ready to decide and respond.",
+        "action": "send_reply",
+        "action_input": {
+          "ticket_id": "TKT-004",
+          "message": "Hi David,\n\nThank you for reaching out to ShopWave Support.\n\nWe sincerely apologize for sending the wrong item for order ORD-1004. We're arranging to resolve this for you. You don't need to return the incorrect item.\n\nOur fulfilment team will reach out with next steps shortly.\n\nBest regards,\nShopWave Support"
+        },
+        "observation": {
+          "success": true,
+          "message_id": "MSG-AB22D24D",
+          "timestamp": "2026-07-20T13:49:30.424439+00:00"
+        },
+        "success": true,
+        "reason": "All information gathered, composing and sending final response to customer.",
+        "latency_ms": 22.39,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "wrong_item",
+      "initial_flags": [
+        "threatening_language",
+        "urgency",
+        "frustration"
+      ],
+      "classification_confidence": 0.8,
+      "extracted_order_id": "ORD-1004",
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Retrieve order details for ORD-1004",
+        "Search knowledge base for relevant policies: wrong item delivered policy",
+        "Retrieve product details for return window and warranty info",
+        "Check if order is eligible for refund based on policies",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.424657+00:00"
+  },
+  {
+    "ticket_id": "TKT-005",
+    "category": "return",
+    "customer_tier": "vip",
+    "processing_summary": {
+      "final_status": "resolved",
+      "confidence": 1.0,
+      "confidence_reason": "Confidence 1.00: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(1.00)",
+      "total_steps": 6,
+      "total_tool_calls": 6,
+      "total_duration_ms": 240.11,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [
+      "Damaged Items Policy",
+      "POL-001 (Standard Return Policy)",
+      "Product-Specific Return Rules",
+      "Standard Return Policy"
+    ],
+    "resolution_message": "Hi Emma,\n\nThank you for reaching out to ShopWave Support.\n\nWe've reviewed your request regarding order ORD-1005. Unfortunately, we're unable to process a refund at this time because: Return window expired on 2024-01-18. Current date is past the return deadline.. As a VIP customer, we're escalating this for special consideration.\n\nIf you have questions, please don't hesitate to reach out.\n\nBest regards,\nShopWave Support",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.186248+00:00",
+        "thought": "Analyzing ticket TKT-005: Subject: 'Return request'. Classified as 'return'. Found order ID: ORD-1005. Need to gather information to resolve this ticket.",
+        "action": "get_order",
+        "action_input": {
+          "order_id": "ORD-1005"
+        },
+        "observation": {
+          "order_id": "ORD-1005",
+          "customer_id": "C005",
+          "product_id": "P008",
+          "quantity": 2,
+          "amount": 159.98,
+          "status": "delivered",
+          "order_date": "2023-12-15",
+          "delivery_date": "2023-12-19",
+          "return_deadline": "2024-01-18",
+          "refund_status": null,
+          "notes": "Return window expired. VIP customer with pre-approved extended return exception on file."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve order details for ORD-1005. Priority: 0.9. Using tool: get_order.",
+        "latency_ms": 103.15,
+        "retries": 1
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.223139+00:00",
+        "thought": "Step 2 analysis for TKT-005: Order ORD-1005: status=delivered, amount=$159.98, product=P008. 4 information goal(s) still pending.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "emma.collins@email.com"
+        },
+        "observation": {
+          "customer_id": "C005",
+          "email": "emma.collins@email.com",
+          "name": "Emma Collins",
+          "tier": "vip",
+          "account_age_months": 36,
+          "total_orders": 15,
+          "total_spent": 3249.85,
+          "open_tickets": 0,
+          "notes": "VIP customer since founding. Pre-approved extended return exception on file. High-value account."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 36.44,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.238520+00:00",
+        "thought": "Step 3 analysis for TKT-005: Customer identified: Emma Collins (tier: vip). Order ORD-1005: status=delivered, amount=$159.98, product=P008. 3 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "return policy window"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 1.0
+            },
+            {
+              "policy_id": "POL-010",
+              "title": "Product-Specific Return Rules",
+              "category": "returns",
+              "content": "Specific product categories have additional return restrictions: (1) Electronics with broken seals cannot be returned unless defective. (2) Footwear must be unworn and in original packaging — no returns if used outdoors. (3) Hygiene products (yoga mats, personal care) are non-returnable if used. (4) Electronics that have been registered online by the customer are non-returnable. (5) High-value electronics (over $200) have a 15-day return window instead of the standard 30 days.",
+              "relevance_score": 0.35
+            },
+            {
+              "policy_id": "POL-004",
+              "title": "Damaged Items Policy",
+              "category": "damaged",
+              "content": "Items that arrive damaged (damaged during shipping) qualify for an immediate full refund without requiring the item to be returned. The customer should be asked to provide photographic evidence if possible, but refunds for damaged items should not be delayed pending photos. If the item was damaged by the customer after delivery, standard return policy applies instead. For items over $200 that arrive damaged, escalate to supervisor.",
+              "relevance_score": 0.25
+            }
+          ],
+          "query": "return policy window"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: return policy window. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 15.19,
+        "retries": 0
+      },
+      {
+        "step": 4,
+        "timestamp": "2026-07-20T13:49:30.274526+00:00",
+        "thought": "Step 4 analysis for TKT-005: Customer identified: Emma Collins (tier: vip). Order ORD-1005: status=delivered, amount=$159.98, product=P008. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. 2 information goal(s) still pending.",
+        "action": "check_refund_eligibility",
+        "action_input": {
+          "order_id": "ORD-1005"
+        },
+        "observation": {
+          "eligible": false,
+          "reason": "Return window expired on 2024-01-18. Current date is past the return deadline.",
+          "max_refund_amount": 0.0,
+          "policy_reference": "POL-001 (Standard Return Policy)",
+          "order_status": "delivered"
+        },
+        "success": true,
+        "reason": "Goal: Check if order is eligible for refund based on policies. Priority: 0.8. Using tool: check_refund_eligibility.",
+        "latency_ms": 35.78,
+        "retries": 0
+      },
+      {
+        "step": 5,
+        "timestamp": "2026-07-20T13:49:30.292752+00:00",
+        "thought": "Step 5 analysis for TKT-005: Customer identified: Emma Collins (tier: vip). Order ORD-1005: status=delivered, amount=$159.98, product=P008. Refund eligibility: NOT eligible -- Return window expired on 2024-01-18. Current date is past the return deadline.. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. 1 information goal(s) still pending.",
+        "action": "get_product",
+        "action_input": {
+          "product_id": "P008"
+        },
+        "observation": {
+          "product_id": "P008",
+          "name": "BoomBox Mini Bluetooth Speaker",
+          "category": "electronics",
+          "price": 79.99,
+          "warranty_months": 12,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Return not accepted if device has been registered online."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve product details for return window and warranty info. Priority: 0.7. Using tool: get_product.",
+        "latency_ms": 18.03,
+        "retries": 0
+      },
+      {
+        "step": 6,
+        "timestamp": "2026-07-20T13:49:30.322403+00:00",
+        "thought": "Step 6 analysis for TKT-005: Customer identified: Emma Collins (tier: vip). Order ORD-1005: status=delivered, amount=$159.98, product=P008. Product: BoomBox Mini Bluetooth Speaker -- return window: 30 days, warranty: 12 months. Refund eligibility: NOT eligible -- Return window expired on 2024-01-18. Current date is past the return deadline.. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. All information gathered. Ready to decide and respond.",
+        "action": "send_reply",
+        "action_input": {
+          "ticket_id": "TKT-005",
+          "message": "Hi Emma,\n\nThank you for reaching out to ShopWave Support.\n\nWe've reviewed your request regarding order ORD-1005. Unfortunately, we're unable to process a refund at this time because: Return window expired on 2024-01-18. Current date is past the return deadline.. As a VIP customer, we're escalating this for special consideration.\n\nIf you have questions, please don't hesitate to reach out.\n\nBest regards,\nShopWave Support"
+        },
+        "observation": {
+          "success": true,
+          "message_id": "MSG-D000C58E",
+          "timestamp": "2026-07-20T13:49:30.322188+00:00"
+        },
+        "success": true,
+        "reason": "All information gathered, composing and sending final response to customer.",
+        "latency_ms": 29.44,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "return",
+      "initial_flags": [],
+      "classification_confidence": 0.65,
+      "extracted_order_id": "ORD-1005",
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Retrieve order details for ORD-1005",
+        "Search knowledge base for relevant policies: return policy window",
+        "Retrieve product details for return window and warranty info",
+        "Check if order is eligible for refund based on policies",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.322508+00:00"
+  },
+  {
+    "ticket_id": "TKT-006",
+    "category": "cancellation",
+    "customer_tier": "standard",
+    "processing_summary": {
+      "final_status": "resolved",
+      "confidence": 0.825,
+      "confidence_reason": "Confidence 0.82: data_completeness=medium(0.50), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(0.90)",
+      "total_steps": 3,
+      "total_tool_calls": 3,
+      "total_duration_ms": 91.68,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [
+      "Order Tracking Policy",
+      "Order Cancellation Policy",
+      "Standard Return Policy"
+    ],
+    "resolution_message": "Hi Frank,\n\nThank you for reaching out to ShopWave Support.\n\nYour order  has a status of 'unknown'. Please contact us for further assistance with cancellation.\n\nBest regards,\nShopWave Support",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.220687+00:00",
+        "thought": "Analyzing ticket TKT-006: Subject: 'I want to cancel'. Classified as 'cancellation'. No order ID found in ticket. Need to gather information to resolve this ticket.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "frank.osei@email.com"
+        },
+        "observation": {
+          "customer_id": "C006",
+          "email": "frank.osei@email.com",
+          "name": "Frank Osei",
+          "tier": "standard",
+          "account_age_months": 1,
+          "total_orders": 1,
+          "total_spent": 39.99,
+          "open_tickets": 0,
+          "notes": "Brand new customer, first order."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 28.45,
+        "retries": 0
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.265415+00:00",
+        "thought": "Step 2 analysis for TKT-006: Customer identified: Frank Osei (tier: standard). 1 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "order cancellation policy"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-005",
+              "title": "Order Cancellation Policy",
+              "category": "cancellation",
+              "content": "Orders in 'processing' status can be cancelled immediately with a full refund at no charge. Orders that have already been 'shipped' cannot be cancelled — the customer must wait for delivery and then initiate a return. Orders that are 'delivered' cannot be cancelled and must go through the return process. Cancellation requests should be processed as quickly as possible to prevent the order from shipping.",
+              "relevance_score": 1.0
+            },
+            {
+              "policy_id": "POL-011",
+              "title": "Order Tracking Policy",
+              "category": "shipping",
+              "content": "Customers can track their orders using the tracking number provided at shipment. If an order is in 'shipped' status, provide the tracking number and estimated delivery date. Standard delivery takes 3-5 business days. If an order has not arrived within 7 business days of the estimated delivery date, escalate to the logistics team. Do not issue refunds for orders still in transit.",
+              "relevance_score": 0.35
+            },
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 0.3
+            }
+          ],
+          "query": "order cancellation policy"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: order cancellation policy. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 44.49,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.282945+00:00",
+        "thought": "Step 3 analysis for TKT-006: Customer identified: Frank Osei (tier: standard). Relevant policies found: Order Cancellation Policy, Order Tracking Policy. All information gathered. Ready to decide and respond.",
+        "action": "send_reply",
+        "action_input": {
+          "ticket_id": "TKT-006",
+          "message": "Hi Frank,\n\nThank you for reaching out to ShopWave Support.\n\nYour order  has a status of 'unknown'. Please contact us for further assistance with cancellation.\n\nBest regards,\nShopWave Support"
+        },
+        "observation": {
+          "success": true,
+          "message_id": "MSG-92ACD506",
+          "timestamp": "2026-07-20T13:49:30.282784+00:00"
+        },
+        "success": true,
+        "reason": "All information gathered, composing and sending final response to customer.",
+        "latency_ms": 17.33,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "cancellation",
+      "initial_flags": [],
+      "classification_confidence": 0.65,
+      "extracted_order_id": null,
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Customer didn't provide order ID — lookup customer to find associated orders",
+        "Search knowledge base for relevant policies: order cancellation policy",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.283016+00:00"
+  },
+  {
+    "ticket_id": "TKT-007",
+    "category": "return",
+    "customer_tier": "premium",
+    "processing_summary": {
+      "final_status": "resolved",
+      "confidence": 1.0,
+      "confidence_reason": "Confidence 1.00: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(1.00)",
+      "total_steps": 7,
+      "total_tool_calls": 7,
+      "total_duration_ms": 328.38,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [
+      "Damaged Items Policy",
+      "POL-001 (Standard Return Policy), POL-002 (Refund Processing Policy)",
+      "Product-Specific Return Rules",
+      "Standard Return Policy"
+    ],
+    "resolution_message": "Hi Grace,\n\nThank you for reaching out to ShopWave Support.\n\nWe've processed your refund of $49.99 for order ORD-1007. Transaction ID: TXN-8AC54B1E.\n\nPlease allow 5-7 business days for the amount to appear in your account.\n\nIs there anything else we can help with?\n\nBest regards,\nShopWave Support",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.255456+00:00",
+        "thought": "Analyzing ticket TKT-007: Subject: 'Laptop stand return'. Classified as 'return'. Found order ID: ORD-1007. Need to gather information to resolve this ticket.",
+        "action": "get_order",
+        "action_input": {
+          "order_id": "ORD-1007"
+        },
+        "observation": {
+          "order_id": "ORD-1007",
+          "customer_id": "C007",
+          "product_id": "P004",
+          "quantity": 1,
+          "amount": 49.99,
+          "status": "delivered",
+          "order_date": "2024-02-01",
+          "delivery_date": "2024-02-05",
+          "return_deadline": "2024-04-05",
+          "refund_status": null,
+          "notes": "60-day return window applies for this product category."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve order details for ORD-1007. Priority: 0.9. Using tool: get_order.",
+        "latency_ms": 28.86,
+        "retries": 0
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.286292+00:00",
+        "thought": "Step 2 analysis for TKT-007: Order ORD-1007: status=delivered, amount=$49.99, product=P004. 4 information goal(s) still pending.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "grace.patel@email.com"
+        },
+        "observation": {
+          "customer_id": "C007",
+          "email": "grace.patel@email.com",
+          "name": "Grace Patel",
+          "tier": "premium",
+          "account_age_months": 14,
+          "total_orders": 3,
+          "total_spent": 209.97,
+          "open_tickets": 0,
+          "notes": "Active customer, participates in product reviews."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 30.64,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.318321+00:00",
+        "thought": "Step 3 analysis for TKT-007: Customer identified: Grace Patel (tier: premium). Order ORD-1007: status=delivered, amount=$49.99, product=P004. 3 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "return policy window"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 1.0
+            },
+            {
+              "policy_id": "POL-010",
+              "title": "Product-Specific Return Rules",
+              "category": "returns",
+              "content": "Specific product categories have additional return restrictions: (1) Electronics with broken seals cannot be returned unless defective. (2) Footwear must be unworn and in original packaging — no returns if used outdoors. (3) Hygiene products (yoga mats, personal care) are non-returnable if used. (4) Electronics that have been registered online by the customer are non-returnable. (5) High-value electronics (over $200) have a 15-day return window instead of the standard 30 days.",
+              "relevance_score": 0.35
+            },
+            {
+              "policy_id": "POL-004",
+              "title": "Damaged Items Policy",
+              "category": "damaged",
+              "content": "Items that arrive damaged (damaged during shipping) qualify for an immediate full refund without requiring the item to be returned. The customer should be asked to provide photographic evidence if possible, but refunds for damaged items should not be delayed pending photos. If the item was damaged by the customer after delivery, standard return policy applies instead. For items over $200 that arrive damaged, escalate to supervisor.",
+              "relevance_score": 0.25
+            }
+          ],
+          "query": "return policy window"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: return policy window. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 31.9,
+        "retries": 0
+      },
+      {
+        "step": 4,
+        "timestamp": "2026-07-20T13:49:30.355975+00:00",
+        "thought": "Step 4 analysis for TKT-007: Customer identified: Grace Patel (tier: premium). Order ORD-1007: status=delivered, amount=$49.99, product=P004. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. 2 information goal(s) still pending.",
+        "action": "check_refund_eligibility",
+        "action_input": {
+          "order_id": "ORD-1007"
+        },
+        "observation": {
+          "eligible": true,
+          "reason": "Order is delivered and within return window. Eligible for refund.",
+          "max_refund_amount": 49.99,
+          "policy_reference": "POL-001 (Standard Return Policy), POL-002 (Refund Processing Policy)",
+          "order_status": "delivered"
+        },
+        "success": true,
+        "reason": "Goal: Check if order is eligible for refund based on policies. Priority: 0.8. Using tool: check_refund_eligibility.",
+        "latency_ms": 37.53,
+        "retries": 0
+      },
+      {
+        "step": 5,
+        "timestamp": "2026-07-20T13:49:30.509520+00:00",
+        "thought": "Step 5 analysis for TKT-007: Customer identified: Grace Patel (tier: premium). Order ORD-1007: status=delivered, amount=$49.99, product=P004. Refund eligibility: eligible -- Order is delivered and within return window. Eligible for refund.. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. 2 information goal(s) still pending.",
+        "action": "issue_refund",
+        "action_input": {
+          "order_id": "ORD-1007",
+          "amount": 49.99
+        },
+        "observation": {
+          "success": true,
+          "transaction_id": "TXN-8AC54B1E",
+          "refunded_amount": 49.99,
+          "message": "Refund of $49.99 successfully processed. Transaction ID: TXN-8AC54B1E. Customer will receive funds within 5-7 business days."
+        },
+        "success": true,
+        "reason": "Goal: Issue refund of $49.99 for ORD-1007. Priority: 0.8. Using tool: issue_refund.",
+        "latency_ms": 153.43,
+        "retries": 1
+      },
+      {
+        "step": 6,
+        "timestamp": "2026-07-20T13:49:30.529403+00:00",
+        "thought": "Step 6 analysis for TKT-007: Customer identified: Grace Patel (tier: premium). Order ORD-1007: status=delivered, amount=$49.99, product=P004. Refund eligibility: eligible -- Order is delivered and within return window. Eligible for refund.. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. 1 information goal(s) still pending.",
+        "action": "get_product",
+        "action_input": {
+          "product_id": "P004"
+        },
+        "observation": {
+          "product_id": "P004",
+          "name": "ErgoLift Laptop Stand",
+          "category": "electronics_accessories",
+          "price": 49.99,
+          "warranty_months": 6,
+          "return_window_days": 60,
+          "returnable": true,
+          "notes": "Extended 60-day return window applies to this product category."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve product details for return window and warranty info. Priority: 0.7. Using tool: get_product.",
+        "latency_ms": 19.72,
+        "retries": 0
+      },
+      {
+        "step": 7,
+        "timestamp": "2026-07-20T13:49:30.554492+00:00",
+        "thought": "Step 7 analysis for TKT-007: Customer identified: Grace Patel (tier: premium). Order ORD-1007: status=delivered, amount=$49.99, product=P004. Product: ErgoLift Laptop Stand -- return window: 60 days, warranty: 6 months. Refund eligibility: eligible -- Order is delivered and within return window. Eligible for refund.. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. All information gathered. Ready to decide and respond.",
+        "action": "send_reply",
+        "action_input": {
+          "ticket_id": "TKT-007",
+          "message": "Hi Grace,\n\nThank you for reaching out to ShopWave Support.\n\nWe've processed your refund of $49.99 for order ORD-1007. Transaction ID: TXN-8AC54B1E.\n\nPlease allow 5-7 business days for the amount to appear in your account.\n\nIs there anything else we can help with?\n\nBest regards,\nShopWave Support"
+        },
+        "observation": {
+          "success": true,
+          "message_id": "MSG-F45A27C5",
+          "timestamp": "2026-07-20T13:49:30.554453+00:00"
+        },
+        "success": true,
+        "reason": "All information gathered, composing and sending final response to customer.",
+        "latency_ms": 24.89,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "return",
+      "initial_flags": [],
+      "classification_confidence": 0.65,
+      "extracted_order_id": "ORD-1007",
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Retrieve order details for ORD-1007",
+        "Search knowledge base for relevant policies: return policy window",
+        "Retrieve product details for return window and warranty info",
+        "Check if order is eligible for refund based on policies",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.554538+00:00"
+  },
+  {
+    "ticket_id": "TKT-008",
+    "category": "damage_claim",
+    "customer_tier": "standard",
+    "processing_summary": {
+      "final_status": "resolved",
+      "confidence": 1.0,
+      "confidence_reason": "Confidence 1.00: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(1.00)",
+      "total_steps": 7,
+      "total_tool_calls": 7,
+      "total_duration_ms": 242.0,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [
+      "Damaged Items Policy",
+      "Refund Processing Policy",
+      "POL-001 (Standard Return Policy), POL-002 (Refund Processing Policy)",
+      "Standard Return Policy"
+    ],
+    "resolution_message": "Hi Henry,\n\nThank you for reaching out to ShopWave Support.\n\nWe're sorry to hear your item arrived damaged. We've processed a full refund of $44.99 for order ORD-1008. You do not need to return the damaged item.\n\nTransaction ID: TXN-706042A7. Please allow 5-7 business days.\n\nBest regards,\nShopWave Support",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.317248+00:00",
+        "thought": "Analyzing ticket TKT-008: Subject: 'Lamp came broken'. Classified as 'damage_claim'. Found order ID: ORD-1008. Need to gather information to resolve this ticket.",
+        "action": "get_order",
+        "action_input": {
+          "order_id": "ORD-1008"
+        },
+        "observation": {
+          "order_id": "ORD-1008",
+          "customer_id": "C008",
+          "product_id": "P007",
+          "quantity": 1,
+          "amount": 44.99,
+          "status": "delivered",
+          "order_date": "2024-03-05",
+          "delivery_date": "2024-03-08",
+          "return_deadline": "2024-04-07",
+          "refund_status": null,
+          "notes": "Item reported as damaged on arrival by customer via email. No formal claim opened."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve order details for ORD-1008. Priority: 0.9. Using tool: get_order.",
+        "latency_ms": 24.56,
+        "retries": 0
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.355763+00:00",
+        "thought": "Step 2 analysis for TKT-008: Order ORD-1008: status=delivered, amount=$44.99, product=P007. 4 information goal(s) still pending.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "henry.marsh@email.com"
+        },
+        "observation": {
+          "customer_id": "C008",
+          "email": "henry.marsh@email.com",
+          "name": "Henry Marsh",
+          "tier": "standard",
+          "account_age_months": 8,
+          "total_orders": 2,
+          "total_spent": 294.98,
+          "open_tickets": 1,
+          "notes": "Reported a damaged item on arrival via email."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 38.18,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.385967+00:00",
+        "thought": "Step 3 analysis for TKT-008: Customer identified: Henry Marsh (tier: standard). Order ORD-1008: status=delivered, amount=$44.99, product=P007. 3 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "damaged items policy"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-004",
+              "title": "Damaged Items Policy",
+              "category": "damaged",
+              "content": "Items that arrive damaged (damaged during shipping) qualify for an immediate full refund without requiring the item to be returned. The customer should be asked to provide photographic evidence if possible, but refunds for damaged items should not be delayed pending photos. If the item was damaged by the customer after delivery, standard return policy applies instead. For items over $200 that arrive damaged, escalate to supervisor.",
+              "relevance_score": 1.0
+            },
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 0.35
+            },
+            {
+              "policy_id": "POL-002",
+              "title": "Refund Processing Policy",
+              "category": "refunds",
+              "content": "Refunds are processed to the original payment method within 5-7 business days after approval. Full refunds are issued for: defective items within warranty, wrong items delivered, and items damaged during shipping. Partial refunds may be offered at agent discretion for minor cosmetic issues. Refunds over $200 require escalation to a supervisor for approval. A refund cannot be issued if one has already been processed for the same order.",
+              "relevance_score": 0.25
+            }
+          ],
+          "query": "damaged items policy"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: damaged items policy. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 29.97,
+        "retries": 0
+      },
+      {
+        "step": 4,
+        "timestamp": "2026-07-20T13:49:30.441724+00:00",
+        "thought": "Step 4 analysis for TKT-008: Customer identified: Henry Marsh (tier: standard). Order ORD-1008: status=delivered, amount=$44.99, product=P007. Relevant policies found: Damaged Items Policy, Standard Return Policy. 2 information goal(s) still pending.",
+        "action": "check_refund_eligibility",
+        "action_input": {
+          "order_id": "ORD-1008"
+        },
+        "observation": {
+          "eligible": true,
+          "reason": "Order is delivered and within return window. Eligible for refund.",
+          "max_refund_amount": 44.99,
+          "policy_reference": "POL-001 (Standard Return Policy), POL-002 (Refund Processing Policy)",
+          "order_status": "delivered"
+        },
+        "success": true,
+        "reason": "Goal: Check if order is eligible for refund based on policies. Priority: 0.8. Using tool: check_refund_eligibility.",
+        "latency_ms": 55.53,
+        "retries": 0
+      },
+      {
+        "step": 5,
+        "timestamp": "2026-07-20T13:49:30.488662+00:00",
+        "thought": "Step 5 analysis for TKT-008: Customer identified: Henry Marsh (tier: standard). Order ORD-1008: status=delivered, amount=$44.99, product=P007. Refund eligibility: eligible -- Order is delivered and within return window. Eligible for refund.. Relevant policies found: Damaged Items Policy, Standard Return Policy. 2 information goal(s) still pending.",
+        "action": "issue_refund",
+        "action_input": {
+          "order_id": "ORD-1008",
+          "amount": 44.99
+        },
+        "observation": {
+          "success": true,
+          "transaction_id": "TXN-706042A7",
+          "refunded_amount": 44.99,
+          "message": "Refund of $44.99 successfully processed. Transaction ID: TXN-706042A7. Customer will receive funds within 5-7 business days."
+        },
+        "success": true,
+        "reason": "Goal: Issue refund of $44.99 for ORD-1008. Priority: 0.8. Using tool: issue_refund.",
+        "latency_ms": 46.67,
+        "retries": 0
+      },
+      {
+        "step": 6,
+        "timestamp": "2026-07-20T13:49:30.509161+00:00",
+        "thought": "Step 6 analysis for TKT-008: Customer identified: Henry Marsh (tier: standard). Order ORD-1008: status=delivered, amount=$44.99, product=P007. Refund eligibility: eligible -- Order is delivered and within return window. Eligible for refund.. Relevant policies found: Damaged Items Policy, Standard Return Policy. 1 information goal(s) still pending.",
+        "action": "get_product",
+        "action_input": {
+          "product_id": "P007"
+        },
+        "observation": {
+          "product_id": "P007",
+          "name": "LumiDesk LED Desk Lamp",
+          "category": "home",
+          "price": 44.99,
+          "warranty_months": 12,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Standard return policy applies."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve product details for return window and warranty info. Priority: 0.7. Using tool: get_product.",
+        "latency_ms": 20.32,
+        "retries": 0
+      },
+      {
+        "step": 7,
+        "timestamp": "2026-07-20T13:49:30.533832+00:00",
+        "thought": "Step 7 analysis for TKT-008: Customer identified: Henry Marsh (tier: standard). Order ORD-1008: status=delivered, amount=$44.99, product=P007. Product: LumiDesk LED Desk Lamp -- return window: 30 days, warranty: 12 months. Refund eligibility: eligible -- Order is delivered and within return window. Eligible for refund.. Relevant policies found: Damaged Items Policy, Standard Return Policy. All information gathered. Ready to decide and respond.",
+        "action": "send_reply",
+        "action_input": {
+          "ticket_id": "TKT-008",
+          "message": "Hi Henry,\n\nThank you for reaching out to ShopWave Support.\n\nWe're sorry to hear your item arrived damaged. We've processed a full refund of $44.99 for order ORD-1008. You do not need to return the damaged item.\n\nTransaction ID: TXN-706042A7. Please allow 5-7 business days.\n\nBest regards,\nShopWave Support"
+        },
+        "observation": {
+          "success": true,
+          "message_id": "MSG-67996EB9",
+          "timestamp": "2026-07-20T13:49:30.533766+00:00"
+        },
+        "success": true,
+        "reason": "All information gathered, composing and sending final response to customer.",
+        "latency_ms": 24.46,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "damage_claim",
+      "initial_flags": [],
+      "classification_confidence": 0.9,
+      "extracted_order_id": "ORD-1008",
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Retrieve order details for ORD-1008",
+        "Search knowledge base for relevant policies: damaged items policy",
+        "Retrieve product details for return window and warranty info",
+        "Check if order is eligible for refund based on policies",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.533890+00:00"
+  },
+  {
+    "ticket_id": "TKT-009",
+    "category": "refund",
+    "customer_tier": "standard",
+    "processing_summary": {
+      "final_status": "resolved",
+      "confidence": 1.0,
+      "confidence_reason": "Confidence 1.00: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(1.00)",
+      "total_steps": 6,
+      "total_tool_calls": 6,
+      "total_duration_ms": 247.27,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [
+      "Damaged Items Policy",
+      "POL-002 (Refund Processing Policy)",
+      "Refund Processing Policy",
+      "Standard Return Policy"
+    ],
+    "resolution_message": "Hi Irene,\n\nThank you for reaching out to ShopWave Support.\n\nWe've reviewed your request regarding order ORD-1009. Unfortunately, we're unable to process a refund at this time because: Refund has already been processed for this order.\n\nIf you have questions, please don't hesitate to reach out.\n\nBest regards,\nShopWave Support",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.358936+00:00",
+        "thought": "Analyzing ticket TKT-009: Subject: 'Refund already done?'. Classified as 'refund'. Found order ID: ORD-1009. Need to gather information to resolve this ticket.",
+        "action": "get_order",
+        "action_input": {
+          "order_id": "ORD-1009"
+        },
+        "observation": {
+          "order_id": "ORD-1009",
+          "customer_id": "C009",
+          "product_id": "P001",
+          "quantity": 1,
+          "amount": 129.99,
+          "status": "delivered",
+          "order_date": "2024-02-25",
+          "delivery_date": "2024-02-28",
+          "return_deadline": "2024-03-29",
+          "refund_status": "refunded",
+          "notes": "Refund already processed on 2024-03-02 for this order. Full amount returned."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve order details for ORD-1009. Priority: 0.9. Using tool: get_order.",
+        "latency_ms": 34.98,
+        "retries": 0
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.390853+00:00",
+        "thought": "Step 2 analysis for TKT-009: Order ORD-1009: status=delivered, amount=$129.99, product=P001. 4 information goal(s) still pending.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "irene.castillo@email.com"
+        },
+        "observation": {
+          "customer_id": "C009",
+          "email": "irene.castillo@email.com",
+          "name": "Irene Castillo",
+          "tier": "standard",
+          "account_age_months": 10,
+          "total_orders": 2,
+          "total_spent": 209.98,
+          "open_tickets": 0,
+          "notes": "Recently had a refund processed for ORD-1009."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 31.72,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.437693+00:00",
+        "thought": "Step 3 analysis for TKT-009: Customer identified: Irene Castillo (tier: standard). Order ORD-1009: status=delivered, amount=$129.99, product=P001. 3 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "refund policy eligibility"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-002",
+              "title": "Refund Processing Policy",
+              "category": "refunds",
+              "content": "Refunds are processed to the original payment method within 5-7 business days after approval. Full refunds are issued for: defective items within warranty, wrong items delivered, and items damaged during shipping. Partial refunds may be offered at agent discretion for minor cosmetic issues. Refunds over $200 require escalation to a supervisor for approval. A refund cannot be issued if one has already been processed for the same order.",
+              "relevance_score": 0.95
+            },
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 0.25
+            },
+            {
+              "policy_id": "POL-004",
+              "title": "Damaged Items Policy",
+              "category": "damaged",
+              "content": "Items that arrive damaged (damaged during shipping) qualify for an immediate full refund without requiring the item to be returned. The customer should be asked to provide photographic evidence if possible, but refunds for damaged items should not be delayed pending photos. If the item was damaged by the customer after delivery, standard return policy applies instead. For items over $200 that arrive damaged, escalate to supervisor.",
+              "relevance_score": 0.25
+            }
+          ],
+          "query": "refund policy eligibility"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: refund policy eligibility. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 46.65,
+        "retries": 0
+      },
+      {
+        "step": 4,
+        "timestamp": "2026-07-20T13:49:30.532095+00:00",
+        "thought": "Step 4 analysis for TKT-009: Customer identified: Irene Castillo (tier: standard). Order ORD-1009: status=delivered, amount=$129.99, product=P001. Relevant policies found: Refund Processing Policy, Standard Return Policy. 2 information goal(s) still pending.",
+        "action": "check_refund_eligibility",
+        "action_input": {
+          "order_id": "ORD-1009"
+        },
+        "observation": {
+          "eligible": false,
+          "reason": "Refund has already been processed for this order",
+          "max_refund_amount": 0.0,
+          "policy_reference": "POL-002 (Refund Processing Policy)",
+          "order_status": "delivered"
+        },
+        "success": true,
+        "reason": "Goal: Check if order is eligible for refund based on policies. Priority: 0.8. Using tool: check_refund_eligibility.",
+        "latency_ms": 94.16,
+        "retries": 1
+      },
+      {
+        "step": 5,
+        "timestamp": "2026-07-20T13:49:30.554212+00:00",
+        "thought": "Step 5 analysis for TKT-009: Customer identified: Irene Castillo (tier: standard). Order ORD-1009: status=delivered, amount=$129.99, product=P001. Refund eligibility: NOT eligible -- Refund has already been processed for this order. Relevant policies found: Refund Processing Policy, Standard Return Policy. 1 information goal(s) still pending.",
+        "action": "get_product",
+        "action_input": {
+          "product_id": "P001"
+        },
+        "observation": {
+          "product_id": "P001",
+          "name": "ProSound Wireless Headphones",
+          "category": "electronics",
+          "price": 129.99,
+          "warranty_months": 12,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Return not accepted if seal is broken unless item is defective."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve product details for return window and warranty info. Priority: 0.7. Using tool: get_product.",
+        "latency_ms": 21.82,
+        "retries": 0
+      },
+      {
+        "step": 6,
+        "timestamp": "2026-07-20T13:49:30.570682+00:00",
+        "thought": "Step 6 analysis for TKT-009: Customer identified: Irene Castillo (tier: standard). Order ORD-1009: status=delivered, amount=$129.99, product=P001. Product: ProSound Wireless Headphones -- return window: 30 days, warranty: 12 months. Refund eligibility: NOT eligible -- Refund has already been processed for this order. Relevant policies found: Refund Processing Policy, Standard Return Policy. All information gathered. Ready to decide and respond.",
+        "action": "send_reply",
+        "action_input": {
+          "ticket_id": "TKT-009",
+          "message": "Hi Irene,\n\nThank you for reaching out to ShopWave Support.\n\nWe've reviewed your request regarding order ORD-1009. Unfortunately, we're unable to process a refund at this time because: Refund has already been processed for this order.\n\nIf you have questions, please don't hesitate to reach out.\n\nBest regards,\nShopWave Support"
+        },
+        "observation": {
+          "success": true,
+          "message_id": "MSG-44ED7A83",
+          "timestamp": "2026-07-20T13:49:30.570550+00:00"
+        },
+        "success": true,
+        "reason": "All information gathered, composing and sending final response to customer.",
+        "latency_ms": 16.27,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "refund",
+      "initial_flags": [],
+      "classification_confidence": 0.65,
+      "extracted_order_id": "ORD-1009",
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Retrieve order details for ORD-1009",
+        "Search knowledge base for relevant policies: refund policy eligibility",
+        "Retrieve product details for return window and warranty info",
+        "Check if order is eligible for refund based on policies",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.570747+00:00"
+  },
+  {
+    "ticket_id": "TKT-010",
+    "category": "order_status",
+    "customer_tier": "standard",
+    "processing_summary": {
+      "final_status": "resolved",
+      "confidence": 0.825,
+      "confidence_reason": "Confidence 0.82: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=low(0.30), clarity=high(1.00)",
+      "total_steps": 4,
+      "total_tool_calls": 4,
+      "total_duration_ms": 178.74,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [],
+    "resolution_message": "Hi James,\n\nThank you for reaching out to ShopWave Support.\n\nYour order ORD-1010 is currently in transit. Your tracking number is TRK-88291. Expected delivery: within 3-5 business days.\n\nYou can track your package using the tracking number above.\n\nBest regards,\nShopWave Support",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.363300+00:00",
+        "thought": "Analyzing ticket TKT-010: Subject: 'Where is my order?'. Classified as 'order_status'. Found order ID: ORD-1010. Need to gather information to resolve this ticket.",
+        "action": "get_order",
+        "action_input": {
+          "order_id": "ORD-1010"
+        },
+        "observation": {
+          "order_id": "ORD-1010",
+          "customer_id": "C010",
+          "product_id": "P003",
+          "quantity": 1,
+          "amount": 199.99,
+          "status": "shipped",
+          "order_date": "2024-03-12",
+          "delivery_date": null,
+          "return_deadline": null,
+          "refund_status": null,
+          "notes": "In transit. Expected delivery 2024-03-16. Tracking: TRK-88291."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve order details for ORD-1010. Priority: 0.9. Using tool: get_order.",
+        "latency_ms": 27.29,
+        "retries": 0
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.388607+00:00",
+        "thought": "Step 2 analysis for TKT-010: Order ORD-1010: status=shipped, amount=$199.99, product=P003. 2 information goal(s) still pending.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "james.wu@email.com"
+        },
+        "observation": {
+          "customer_id": "C010",
+          "email": "james.wu@email.com",
+          "name": "James Wu",
+          "tier": "standard",
+          "account_age_months": 4,
+          "total_orders": 1,
+          "total_spent": 199.99,
+          "open_tickets": 0,
+          "notes": "New customer, first order currently in transit."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 25.07,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.496963+00:00",
+        "thought": "Step 3 analysis for TKT-010: Customer identified: James Wu (tier: standard). Order ORD-1010: status=shipped, amount=$199.99, product=P003. 1 information goal(s) still pending.",
+        "action": "get_product",
+        "action_input": {
+          "product_id": "P003"
+        },
+        "observation": {
+          "product_id": "P003",
+          "name": "BrewMaster 3000 Coffee Maker",
+          "category": "home_appliances",
+          "price": 199.99,
+          "warranty_months": 24,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Warranty covers manufacturing defects only. Does not cover user damage."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve product details for return window and warranty info. Priority: 0.7. Using tool: get_product.",
+        "latency_ms": 108.14,
+        "retries": 1
+      },
+      {
+        "step": 4,
+        "timestamp": "2026-07-20T13:49:30.514244+00:00",
+        "thought": "Step 4 analysis for TKT-010: Customer identified: James Wu (tier: standard). Order ORD-1010: status=shipped, amount=$199.99, product=P003. Product: BrewMaster 3000 Coffee Maker -- return window: 30 days, warranty: 24 months. All information gathered. Ready to decide and respond.",
+        "action": "send_reply",
+        "action_input": {
+          "ticket_id": "TKT-010",
+          "message": "Hi James,\n\nThank you for reaching out to ShopWave Support.\n\nYour order ORD-1010 is currently in transit. Your tracking number is TRK-88291. Expected delivery: within 3-5 business days.\n\nYou can track your package using the tracking number above.\n\nBest regards,\nShopWave Support"
+        },
+        "observation": {
+          "success": true,
+          "message_id": "MSG-0C38EE7D",
+          "timestamp": "2026-07-20T13:49:30.514094+00:00"
+        },
+        "success": true,
+        "reason": "All information gathered, composing and sending final response to customer.",
+        "latency_ms": 16.94,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "order_status",
+      "initial_flags": [],
+      "classification_confidence": 0.8,
+      "extracted_order_id": "ORD-1010",
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Retrieve order details for ORD-1010",
+        "Check order shipping status and provide tracking info",
+        "Retrieve product details for return window and warranty info",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.514319+00:00"
+  },
+  {
+    "ticket_id": "TKT-011",
+    "category": "wrong_item",
+    "customer_tier": "premium",
+    "processing_summary": {
+      "final_status": "escalated",
+      "confidence": 1.0,
+      "confidence_reason": "Confidence 1.00: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(1.00)",
+      "total_steps": 5,
+      "total_tool_calls": 5,
+      "total_duration_ms": 204.29,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [
+      "Damaged Items Policy",
+      "Standard Return Policy",
+      "POL-001 (Standard Return Policy), POL-002 (Refund Processing Policy)",
+      "Wrong Item Delivered Policy"
+    ],
+    "resolution_message": "Ticket TKT-011 requires human intervention. Reason: Refund amount ($249.99) exceeds $200 — requires supervisor approval. Category: wrong_item. Customer: Alice Turner (tier: premium). Order: ORD-1011 — status: delivered, amount: $249.99. Actions taken: get_order, get_customer, search_knowledge_base, check_refund_eligibility. Recommended: Arrange correct item shipment or process refund.",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.523920+00:00",
+        "thought": "Analyzing ticket TKT-011: Subject: 'Wrong colour watch received'. Classified as 'wrong_item'. Found order ID: ORD-1011. Need to gather information to resolve this ticket.",
+        "action": "get_order",
+        "action_input": {
+          "order_id": "ORD-1011"
+        },
+        "observation": {
+          "order_id": "ORD-1011",
+          "customer_id": "C001",
+          "product_id": "P006",
+          "quantity": 1,
+          "amount": 249.99,
+          "status": "delivered",
+          "order_date": "2024-03-08",
+          "delivery_date": "2024-03-11",
+          "return_deadline": "2024-03-26",
+          "refund_status": null,
+          "notes": "Customer reported receiving wrong colour variant. Correct order was Blue, received Black."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve order details for ORD-1011. Priority: 0.9. Using tool: get_order.",
+        "latency_ms": 98.23,
+        "retries": 1
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.542269+00:00",
+        "thought": "Step 2 analysis for TKT-011: Order ORD-1011: status=delivered, amount=$249.99, product=P006. 4 information goal(s) still pending.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "alice.turner@email.com"
+        },
+        "observation": {
+          "customer_id": "C001",
+          "email": "alice.turner@email.com",
+          "name": "Alice Turner",
+          "tier": "premium",
+          "account_age_months": 24,
+          "total_orders": 5,
+          "total_spent": 849.95,
+          "open_tickets": 1,
+          "notes": "Loyal customer, consistent buyer. No issues historically."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 18.13,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.577000+00:00",
+        "thought": "Step 3 analysis for TKT-011: Customer identified: Alice Turner (tier: premium). Order ORD-1011: status=delivered, amount=$249.99, product=P006. 3 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "wrong item delivered policy"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-006",
+              "title": "Wrong Item Delivered Policy",
+              "category": "wrong_item",
+              "content": "If a customer receives the wrong item (wrong product, wrong color, wrong size), they are eligible for a full refund or exchange regardless of the return window. The customer does not need to return the incorrect item before receiving a replacement or refund. For wrong item cases, check product availability for the correct variant before offering an exchange. If the correct item is not available, issue a full refund.",
+              "relevance_score": 1.0
+            },
+            {
+              "policy_id": "POL-004",
+              "title": "Damaged Items Policy",
+              "category": "damaged",
+              "content": "Items that arrive damaged (damaged during shipping) qualify for an immediate full refund without requiring the item to be returned. The customer should be asked to provide photographic evidence if possible, but refunds for damaged items should not be delayed pending photos. If the item was damaged by the customer after delivery, standard return policy applies instead. For items over $200 that arrive damaged, escalate to supervisor.",
+              "relevance_score": 0.4
+            },
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 0.3
+            }
+          ],
+          "query": "wrong item delivered policy"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: wrong item delivered policy. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 34.47,
+        "retries": 0
+      },
+      {
+        "step": 4,
+        "timestamp": "2026-07-20T13:49:30.616494+00:00",
+        "thought": "Step 4 analysis for TKT-011: Customer identified: Alice Turner (tier: premium). Order ORD-1011: status=delivered, amount=$249.99, product=P006. Relevant policies found: Wrong Item Delivered Policy, Damaged Items Policy. 2 information goal(s) still pending.",
+        "action": "check_refund_eligibility",
+        "action_input": {
+          "order_id": "ORD-1011"
+        },
+        "observation": {
+          "eligible": true,
+          "reason": "Order is delivered and within return window. Eligible for refund.",
+          "max_refund_amount": 249.99,
+          "policy_reference": "POL-001 (Standard Return Policy), POL-002 (Refund Processing Policy)",
+          "order_status": "delivered"
+        },
+        "success": true,
+        "reason": "Goal: Check if order is eligible for refund based on policies. Priority: 0.8. Using tool: check_refund_eligibility.",
+        "latency_ms": 39.24,
+        "retries": 0
+      },
+      {
+        "step": 5,
+        "timestamp": "2026-07-20T13:49:30.629561+00:00",
+        "thought": "Step 5 analysis for TKT-011: Customer identified: Alice Turner (tier: premium). Order ORD-1011: status=delivered, amount=$249.99, product=P006. Refund eligibility: eligible -- Order is delivered and within return window. Eligible for refund.. Relevant policies found: Wrong Item Delivered Policy, Damaged Items Policy. 1 information goal(s) still pending.",
+        "action": "escalate",
+        "action_input": {
+          "ticket_id": "TKT-011",
+          "summary": "Ticket TKT-011 requires human intervention. Reason: Refund amount ($249.99) exceeds $200 — requires supervisor approval. Category: wrong_item. Customer: Alice Turner (tier: premium). Order: ORD-1011 — status: delivered, amount: $249.99. Actions taken: get_order, get_customer, search_knowledge_base, check_refund_eligibility. Recommended: Arrange correct item shipment or process refund.",
+          "priority": "high"
+        },
+        "observation": {
+          "success": true,
+          "escalation_id": "ESC-619FA727",
+          "assigned_team": "Tier 2 Support",
+          "priority": "high"
+        },
+        "success": true,
+        "reason": "Escalating because: Refund amount ($249.99) exceeds $200 — requires supervisor approval",
+        "latency_ms": 12.79,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "wrong_item",
+      "initial_flags": [],
+      "classification_confidence": 0.8,
+      "extracted_order_id": "ORD-1011",
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Retrieve order details for ORD-1011",
+        "Search knowledge base for relevant policies: wrong item delivered policy",
+        "Retrieve product details for return window and warranty info",
+        "Check if order is eligible for refund based on policies",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.629657+00:00"
+  },
+  {
+    "ticket_id": "TKT-012",
+    "category": "cancellation",
+    "customer_tier": "premium",
+    "processing_summary": {
+      "final_status": "resolved",
+      "confidence": 1.0,
+      "confidence_reason": "Confidence 1.00: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(1.00)",
+      "total_steps": 7,
+      "total_tool_calls": 7,
+      "total_duration_ms": 244.92,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [
+      "Order Tracking Policy",
+      "POL-005 (Order Cancellation Policy)",
+      "Order Cancellation Policy",
+      "Standard Return Policy"
+    ],
+    "resolution_message": "Hi Carol,\n\nThank you for reaching out to ShopWave Support.\n\nWe've successfully cancelled your order ORD-1012. A full refund of $89.99 will be processed and should appear in your account within 5-7 business days.\n\nBest regards,\nShopWave Support",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.532969+00:00",
+        "thought": "Analyzing ticket TKT-012: Subject: 'Cancel my new order'. Classified as 'cancellation'. Found order ID: ORD-1012. Need to gather information to resolve this ticket.",
+        "action": "get_order",
+        "action_input": {
+          "order_id": "ORD-1012"
+        },
+        "observation": {
+          "order_id": "ORD-1012",
+          "customer_id": "C003",
+          "product_id": "P002",
+          "quantity": 1,
+          "amount": 89.99,
+          "status": "processing",
+          "order_date": "2024-03-14",
+          "delivery_date": null,
+          "return_deadline": null,
+          "refund_status": null,
+          "notes": "Order placed but not yet shipped. Customer can cancel free of charge."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve order details for ORD-1012. Priority: 0.9. Using tool: get_order.",
+        "latency_ms": 17.7,
+        "retries": 0
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.562695+00:00",
+        "thought": "Step 2 analysis for TKT-012: Order ORD-1012: status=processing, amount=$89.99, product=P002. 4 information goal(s) still pending.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "carol.nguyen@email.com"
+        },
+        "observation": {
+          "customer_id": "C003",
+          "email": "carol.nguyen@email.com",
+          "name": "Carol Nguyen",
+          "tier": "premium",
+          "account_age_months": 18,
+          "total_orders": 4,
+          "total_spent": 579.96,
+          "open_tickets": 0,
+          "notes": "Regular buyer, good payment history."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 29.56,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.609620+00:00",
+        "thought": "Step 3 analysis for TKT-012: Customer identified: Carol Nguyen (tier: premium). Order ORD-1012: status=processing, amount=$89.99, product=P002. 3 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "order cancellation policy"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-005",
+              "title": "Order Cancellation Policy",
+              "category": "cancellation",
+              "content": "Orders in 'processing' status can be cancelled immediately with a full refund at no charge. Orders that have already been 'shipped' cannot be cancelled — the customer must wait for delivery and then initiate a return. Orders that are 'delivered' cannot be cancelled and must go through the return process. Cancellation requests should be processed as quickly as possible to prevent the order from shipping.",
+              "relevance_score": 1.0
+            },
+            {
+              "policy_id": "POL-011",
+              "title": "Order Tracking Policy",
+              "category": "shipping",
+              "content": "Customers can track their orders using the tracking number provided at shipment. If an order is in 'shipped' status, provide the tracking number and estimated delivery date. Standard delivery takes 3-5 business days. If an order has not arrived within 7 business days of the estimated delivery date, escalate to the logistics team. Do not issue refunds for orders still in transit.",
+              "relevance_score": 0.35
+            },
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 0.3
+            }
+          ],
+          "query": "order cancellation policy"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: order cancellation policy. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 46.67,
+        "retries": 0
+      },
+      {
+        "step": 4,
+        "timestamp": "2026-07-20T13:49:30.638475+00:00",
+        "thought": "Step 4 analysis for TKT-012: Customer identified: Carol Nguyen (tier: premium). Order ORD-1012: status=processing, amount=$89.99, product=P002. Relevant policies found: Order Cancellation Policy, Order Tracking Policy. 2 information goal(s) still pending.",
+        "action": "check_refund_eligibility",
+        "action_input": {
+          "order_id": "ORD-1012"
+        },
+        "observation": {
+          "eligible": true,
+          "reason": "Order is still in processing — eligible for cancellation and full refund",
+          "max_refund_amount": 89.99,
+          "policy_reference": "POL-005 (Order Cancellation Policy)",
+          "order_status": "processing"
+        },
+        "success": true,
+        "reason": "Goal: Check if order is eligible for refund based on policies. Priority: 0.8. Using tool: check_refund_eligibility.",
+        "latency_ms": 28.4,
+        "retries": 0
+      },
+      {
+        "step": 5,
+        "timestamp": "2026-07-20T13:49:30.717988+00:00",
+        "thought": "Step 5 analysis for TKT-012: Customer identified: Carol Nguyen (tier: premium). Order ORD-1012: status=processing, amount=$89.99, product=P002. Refund eligibility: eligible -- Order is still in processing — eligible for cancellation and full refund. Relevant policies found: Order Cancellation Policy, Order Tracking Policy. 2 information goal(s) still pending.",
+        "action": "issue_refund",
+        "action_input": {
+          "order_id": "ORD-1012",
+          "amount": 89.99
+        },
+        "observation": {
+          "success": true,
+          "transaction_id": "TXN-2B5892E7",
+          "refunded_amount": 89.99,
+          "message": "Refund of $89.99 successfully processed. Transaction ID: TXN-2B5892E7. Customer will receive funds within 5-7 business days."
+        },
+        "success": true,
+        "reason": "Goal: Issue refund of $89.99 for ORD-1012. Priority: 0.8. Using tool: issue_refund.",
+        "latency_ms": 78.98,
+        "retries": 0
+      },
+      {
+        "step": 6,
+        "timestamp": "2026-07-20T13:49:30.734140+00:00",
+        "thought": "Step 6 analysis for TKT-012: Customer identified: Carol Nguyen (tier: premium). Order ORD-1012: status=processing, amount=$89.99, product=P002. Refund eligibility: eligible -- Order is still in processing — eligible for cancellation and full refund. Relevant policies found: Order Cancellation Policy, Order Tracking Policy. 1 information goal(s) still pending.",
+        "action": "get_product",
+        "action_input": {
+          "product_id": "P002"
+        },
+        "observation": {
+          "product_id": "P002",
+          "name": "SwiftRun Pro Running Shoes",
+          "category": "footwear",
+          "price": 89.99,
+          "warranty_months": 0,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Must be unworn and in original packaging. No return if used outdoors."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve product details for return window and warranty info. Priority: 0.7. Using tool: get_product.",
+        "latency_ms": 15.94,
+        "retries": 0
+      },
+      {
+        "step": 7,
+        "timestamp": "2026-07-20T13:49:30.759870+00:00",
+        "thought": "Step 7 analysis for TKT-012: Customer identified: Carol Nguyen (tier: premium). Order ORD-1012: status=processing, amount=$89.99, product=P002. Product: SwiftRun Pro Running Shoes -- return window: 30 days, warranty: 0 months. Refund eligibility: eligible -- Order is still in processing — eligible for cancellation and full refund. Relevant policies found: Order Cancellation Policy, Order Tracking Policy. All information gathered. Ready to decide and respond.",
+        "action": "send_reply",
+        "action_input": {
+          "ticket_id": "TKT-012",
+          "message": "Hi Carol,\n\nThank you for reaching out to ShopWave Support.\n\nWe've successfully cancelled your order ORD-1012. A full refund of $89.99 will be processed and should appear in your account within 5-7 business days.\n\nBest regards,\nShopWave Support"
+        },
+        "observation": {
+          "success": true,
+          "message_id": "MSG-BC0972AA",
+          "timestamp": "2026-07-20T13:49:30.759705+00:00"
+        },
+        "success": true,
+        "reason": "All information gathered, composing and sending final response to customer.",
+        "latency_ms": 25.56,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "cancellation",
+      "initial_flags": [],
+      "classification_confidence": 0.8,
+      "extracted_order_id": "ORD-1012",
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Retrieve order details for ORD-1012",
+        "Search knowledge base for relevant policies: order cancellation policy",
+        "Retrieve product details for return window and warranty info",
+        "Check if order is eligible for refund based on policies",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.759952+00:00"
+  },
+  {
+    "ticket_id": "TKT-013",
+    "category": "return",
+    "customer_tier": "premium",
+    "processing_summary": {
+      "final_status": "resolved",
+      "confidence": 1.0,
+      "confidence_reason": "Confidence 1.00: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(1.00)",
+      "total_steps": 6,
+      "total_tool_calls": 6,
+      "total_duration_ms": 227.6,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [
+      "Damaged Items Policy",
+      "POL-001 (Standard Return Policy)",
+      "Product-Specific Return Rules",
+      "Standard Return Policy"
+    ],
+    "resolution_message": "Hi Grace,\n\nThank you for reaching out to ShopWave Support.\n\nWe've reviewed your request regarding order ORD-1013. Unfortunately, we're unable to process a refund at this time because: Return window expired on 2024-02-23. Current date is past the return deadline.. As a valued Premium member, we'd like to offer you store credit as an alternative.\n\nIf you have questions, please don't hesitate to reach out.\n\nBest regards,\nShopWave Support",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.641926+00:00",
+        "thought": "Analyzing ticket TKT-013: Subject: 'Return for bluetooth speaker'. Classified as 'return'. Found order ID: ORD-1013. Need to gather information to resolve this ticket.",
+        "action": "get_order",
+        "action_input": {
+          "order_id": "ORD-1013"
+        },
+        "observation": {
+          "order_id": "ORD-1013",
+          "customer_id": "C007",
+          "product_id": "P008",
+          "quantity": 1,
+          "amount": 79.99,
+          "status": "delivered",
+          "order_date": "2024-01-20",
+          "delivery_date": "2024-01-24",
+          "return_deadline": "2024-02-23",
+          "refund_status": null,
+          "notes": "Return window expired. Device was registered online by customer on 2024-01-25. Non-returnable per policy."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve order details for ORD-1013. Priority: 0.9. Using tool: get_order.",
+        "latency_ms": 107.08,
+        "retries": 1
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.654613+00:00",
+        "thought": "Step 2 analysis for TKT-013: Order ORD-1013: status=delivered, amount=$79.99, product=P008. 4 information goal(s) still pending.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "grace.patel@email.com"
+        },
+        "observation": {
+          "customer_id": "C007",
+          "email": "grace.patel@email.com",
+          "name": "Grace Patel",
+          "tier": "premium",
+          "account_age_months": 14,
+          "total_orders": 3,
+          "total_spent": 209.97,
+          "open_tickets": 0,
+          "notes": "Active customer, participates in product reviews."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 12.37,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.692957+00:00",
+        "thought": "Step 3 analysis for TKT-013: Customer identified: Grace Patel (tier: premium). Order ORD-1013: status=delivered, amount=$79.99, product=P008. 3 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "return policy window"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 1.0
+            },
+            {
+              "policy_id": "POL-010",
+              "title": "Product-Specific Return Rules",
+              "category": "returns",
+              "content": "Specific product categories have additional return restrictions: (1) Electronics with broken seals cannot be returned unless defective. (2) Footwear must be unworn and in original packaging — no returns if used outdoors. (3) Hygiene products (yoga mats, personal care) are non-returnable if used. (4) Electronics that have been registered online by the customer are non-returnable. (5) High-value electronics (over $200) have a 15-day return window instead of the standard 30 days.",
+              "relevance_score": 0.35
+            },
+            {
+              "policy_id": "POL-004",
+              "title": "Damaged Items Policy",
+              "category": "damaged",
+              "content": "Items that arrive damaged (damaged during shipping) qualify for an immediate full refund without requiring the item to be returned. The customer should be asked to provide photographic evidence if possible, but refunds for damaged items should not be delayed pending photos. If the item was damaged by the customer after delivery, standard return policy applies instead. For items over $200 that arrive damaged, escalate to supervisor.",
+              "relevance_score": 0.25
+            }
+          ],
+          "query": "return policy window"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: return policy window. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 37.97,
+        "retries": 0
+      },
+      {
+        "step": 4,
+        "timestamp": "2026-07-20T13:49:30.717613+00:00",
+        "thought": "Step 4 analysis for TKT-013: Customer identified: Grace Patel (tier: premium). Order ORD-1013: status=delivered, amount=$79.99, product=P008. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. 2 information goal(s) still pending.",
+        "action": "check_refund_eligibility",
+        "action_input": {
+          "order_id": "ORD-1013"
+        },
+        "observation": {
+          "eligible": false,
+          "reason": "Return window expired on 2024-02-23. Current date is past the return deadline.",
+          "max_refund_amount": 0.0,
+          "policy_reference": "POL-001 (Standard Return Policy)",
+          "order_status": "delivered"
+        },
+        "success": true,
+        "reason": "Goal: Check if order is eligible for refund based on policies. Priority: 0.8. Using tool: check_refund_eligibility.",
+        "latency_ms": 24.21,
+        "retries": 0
+      },
+      {
+        "step": 5,
+        "timestamp": "2026-07-20T13:49:30.733321+00:00",
+        "thought": "Step 5 analysis for TKT-013: Customer identified: Grace Patel (tier: premium). Order ORD-1013: status=delivered, amount=$79.99, product=P008. Refund eligibility: NOT eligible -- Return window expired on 2024-02-23. Current date is past the return deadline.. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. 1 information goal(s) still pending.",
+        "action": "get_product",
+        "action_input": {
+          "product_id": "P008"
+        },
+        "observation": {
+          "product_id": "P008",
+          "name": "BoomBox Mini Bluetooth Speaker",
+          "category": "electronics",
+          "price": 79.99,
+          "warranty_months": 12,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Return not accepted if device has been registered online."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve product details for return window and warranty info. Priority: 0.7. Using tool: get_product.",
+        "latency_ms": 15.49,
+        "retries": 0
+      },
+      {
+        "step": 6,
+        "timestamp": "2026-07-20T13:49:30.762071+00:00",
+        "thought": "Step 6 analysis for TKT-013: Customer identified: Grace Patel (tier: premium). Order ORD-1013: status=delivered, amount=$79.99, product=P008. Product: BoomBox Mini Bluetooth Speaker -- return window: 30 days, warranty: 12 months. Refund eligibility: NOT eligible -- Return window expired on 2024-02-23. Current date is past the return deadline.. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. All information gathered. Ready to decide and respond.",
+        "action": "send_reply",
+        "action_input": {
+          "ticket_id": "TKT-013",
+          "message": "Hi Grace,\n\nThank you for reaching out to ShopWave Support.\n\nWe've reviewed your request regarding order ORD-1013. Unfortunately, we're unable to process a refund at this time because: Return window expired on 2024-02-23. Current date is past the return deadline.. As a valued Premium member, we'd like to offer you store credit as an alternative.\n\nIf you have questions, please don't hesitate to reach out.\n\nBest regards,\nShopWave Support"
+        },
+        "observation": {
+          "success": true,
+          "message_id": "MSG-CF21B624",
+          "timestamp": "2026-07-20T13:49:30.761924+00:00"
+        },
+        "success": true,
+        "reason": "All information gathered, composing and sending final response to customer.",
+        "latency_ms": 28.49,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "return",
+      "initial_flags": [],
+      "classification_confidence": 0.65,
+      "extracted_order_id": "ORD-1013",
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Retrieve order details for ORD-1013",
+        "Search knowledge base for relevant policies: return policy window",
+        "Retrieve product details for return window and warranty info",
+        "Check if order is eligible for refund based on policies",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.762141+00:00"
+  },
+  {
+    "ticket_id": "TKT-014",
+    "category": "return",
+    "customer_tier": "standard",
+    "processing_summary": {
+      "final_status": "escalated",
+      "confidence": 1.0,
+      "confidence_reason": "Confidence 1.00: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(1.00)",
+      "total_steps": 5,
+      "total_tool_calls": 5,
+      "total_duration_ms": 168.83,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [
+      "Damaged Items Policy",
+      "POL-001 (Standard Return Policy), POL-002 (Refund Processing Policy)",
+      "Product-Specific Return Rules",
+      "Standard Return Policy"
+    ],
+    "resolution_message": "Ticket TKT-014 requires human intervention. Reason: Refund amount ($249.99) exceeds $200 — requires supervisor approval. Category: return. Customer: Henry Marsh (tier: standard). Order: ORD-1014 — status: delivered, amount: $249.99. Actions taken: get_order, get_customer, search_knowledge_base, check_refund_eligibility. Recommended: Review ticket and take appropriate action.",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.598154+00:00",
+        "thought": "Analyzing ticket TKT-014: Subject: 'Thinking about returning my watch'. Classified as 'return'. Found order ID: ORD-1014. Need to gather information to resolve this ticket.",
+        "action": "get_order",
+        "action_input": {
+          "order_id": "ORD-1014"
+        },
+        "observation": {
+          "order_id": "ORD-1014",
+          "customer_id": "C008",
+          "product_id": "P006",
+          "quantity": 1,
+          "amount": 249.99,
+          "status": "delivered",
+          "order_date": "2024-03-01",
+          "delivery_date": "2024-03-04",
+          "return_deadline": "2024-03-19",
+          "refund_status": null,
+          "notes": "Within return window. No issues logged."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve order details for ORD-1014. Priority: 0.9. Using tool: get_order.",
+        "latency_ms": 42.48,
+        "retries": 0
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.637452+00:00",
+        "thought": "Step 2 analysis for TKT-014: Order ORD-1014: status=delivered, amount=$249.99, product=P006. 4 information goal(s) still pending.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "henry.marsh@email.com"
+        },
+        "observation": {
+          "customer_id": "C008",
+          "email": "henry.marsh@email.com",
+          "name": "Henry Marsh",
+          "tier": "standard",
+          "account_age_months": 8,
+          "total_orders": 2,
+          "total_spent": 294.98,
+          "open_tickets": 1,
+          "notes": "Reported a damaged item on arrival via email."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 39.08,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.668283+00:00",
+        "thought": "Step 3 analysis for TKT-014: Customer identified: Henry Marsh (tier: standard). Order ORD-1014: status=delivered, amount=$249.99, product=P006. 3 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "return policy window"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 1.0
+            },
+            {
+              "policy_id": "POL-010",
+              "title": "Product-Specific Return Rules",
+              "category": "returns",
+              "content": "Specific product categories have additional return restrictions: (1) Electronics with broken seals cannot be returned unless defective. (2) Footwear must be unworn and in original packaging — no returns if used outdoors. (3) Hygiene products (yoga mats, personal care) are non-returnable if used. (4) Electronics that have been registered online by the customer are non-returnable. (5) High-value electronics (over $200) have a 15-day return window instead of the standard 30 days.",
+              "relevance_score": 0.35
+            },
+            {
+              "policy_id": "POL-004",
+              "title": "Damaged Items Policy",
+              "category": "damaged",
+              "content": "Items that arrive damaged (damaged during shipping) qualify for an immediate full refund without requiring the item to be returned. The customer should be asked to provide photographic evidence if possible, but refunds for damaged items should not be delayed pending photos. If the item was damaged by the customer after delivery, standard return policy applies instead. For items over $200 that arrive damaged, escalate to supervisor.",
+              "relevance_score": 0.25
+            }
+          ],
+          "query": "return policy window"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: return policy window. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 30.51,
+        "retries": 0
+      },
+      {
+        "step": 4,
+        "timestamp": "2026-07-20T13:49:30.706525+00:00",
+        "thought": "Step 4 analysis for TKT-014: Customer identified: Henry Marsh (tier: standard). Order ORD-1014: status=delivered, amount=$249.99, product=P006. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. 2 information goal(s) still pending.",
+        "action": "check_refund_eligibility",
+        "action_input": {
+          "order_id": "ORD-1014"
+        },
+        "observation": {
+          "eligible": true,
+          "reason": "Order is delivered and within return window. Eligible for refund.",
+          "max_refund_amount": 249.99,
+          "policy_reference": "POL-001 (Standard Return Policy), POL-002 (Refund Processing Policy)",
+          "order_status": "delivered"
+        },
+        "success": true,
+        "reason": "Goal: Check if order is eligible for refund based on policies. Priority: 0.8. Using tool: check_refund_eligibility.",
+        "latency_ms": 37.84,
+        "retries": 0
+      },
+      {
+        "step": 5,
+        "timestamp": "2026-07-20T13:49:30.724178+00:00",
+        "thought": "Step 5 analysis for TKT-014: Customer identified: Henry Marsh (tier: standard). Order ORD-1014: status=delivered, amount=$249.99, product=P006. Refund eligibility: eligible -- Order is delivered and within return window. Eligible for refund.. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. 1 information goal(s) still pending.",
+        "action": "escalate",
+        "action_input": {
+          "ticket_id": "TKT-014",
+          "summary": "Ticket TKT-014 requires human intervention. Reason: Refund amount ($249.99) exceeds $200 — requires supervisor approval. Category: return. Customer: Henry Marsh (tier: standard). Order: ORD-1014 — status: delivered, amount: $249.99. Actions taken: get_order, get_customer, search_knowledge_base, check_refund_eligibility. Recommended: Review ticket and take appropriate action.",
+          "priority": "high"
+        },
+        "observation": {
+          "success": true,
+          "escalation_id": "ESC-8A217E43",
+          "assigned_team": "Tier 2 Support",
+          "priority": "high"
+        },
+        "success": true,
+        "reason": "Escalating because: Refund amount ($249.99) exceeds $200 — requires supervisor approval",
+        "latency_ms": 17.23,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "return",
+      "initial_flags": [],
+      "classification_confidence": 0.65,
+      "extracted_order_id": "ORD-1014",
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Retrieve order details for ORD-1014",
+        "Search knowledge base for relevant policies: return policy window",
+        "Retrieve product details for return window and warranty info",
+        "Check if order is eligible for refund based on policies",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.724242+00:00"
+  },
+  {
+    "ticket_id": "TKT-015",
+    "category": "damage_claim",
+    "customer_tier": "vip",
+    "processing_summary": {
+      "final_status": "escalated",
+      "confidence": 1.0,
+      "confidence_reason": "Confidence 1.00: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(1.00)",
+      "total_steps": 4,
+      "total_tool_calls": 4,
+      "total_duration_ms": 122.75,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [
+      "Damaged Items Policy",
+      "Refund Processing Policy",
+      "Standard Return Policy"
+    ],
+    "resolution_message": "Ticket TKT-015 requires human intervention. Reason: Customer requests replacement/exchange — requires fulfilment team. Category: damage_claim. Customer: Emma Collins (tier: vip). Order: ORD-1015 — status: delivered, amount: $199.99. Actions taken: get_order, get_customer, search_knowledge_base. Recommended: Verify damage photos and process replacement or refund.",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.614400+00:00",
+        "thought": "Analyzing ticket TKT-015: Subject: 'Damaged coffee maker'. Classified as 'damage_claim'. Found order ID: ORD-1015. Need to gather information to resolve this ticket.",
+        "action": "get_order",
+        "action_input": {
+          "order_id": "ORD-1015"
+        },
+        "observation": {
+          "order_id": "ORD-1015",
+          "customer_id": "C005",
+          "product_id": "P003",
+          "quantity": 1,
+          "amount": 199.99,
+          "status": "delivered",
+          "order_date": "2024-02-18",
+          "delivery_date": "2024-02-22",
+          "return_deadline": "2024-03-23",
+          "refund_status": null,
+          "notes": "Item arrived with cracked water tank. Customer sent photo evidence."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve order details for ORD-1015. Priority: 0.9. Using tool: get_order.",
+        "latency_ms": 42.86,
+        "retries": 0
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.637732+00:00",
+        "thought": "Step 2 analysis for TKT-015: Order ORD-1015: status=delivered, amount=$199.99, product=P003. 4 information goal(s) still pending.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "emma.collins@email.com"
+        },
+        "observation": {
+          "customer_id": "C005",
+          "email": "emma.collins@email.com",
+          "name": "Emma Collins",
+          "tier": "vip",
+          "account_age_months": 36,
+          "total_orders": 15,
+          "total_spent": 3249.85,
+          "open_tickets": 0,
+          "notes": "VIP customer since founding. Pre-approved extended return exception on file. High-value account."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 23.12,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.680039+00:00",
+        "thought": "Step 3 analysis for TKT-015: Customer identified: Emma Collins (tier: vip). Order ORD-1015: status=delivered, amount=$199.99, product=P003. 3 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "damaged items policy"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-004",
+              "title": "Damaged Items Policy",
+              "category": "damaged",
+              "content": "Items that arrive damaged (damaged during shipping) qualify for an immediate full refund without requiring the item to be returned. The customer should be asked to provide photographic evidence if possible, but refunds for damaged items should not be delayed pending photos. If the item was damaged by the customer after delivery, standard return policy applies instead. For items over $200 that arrive damaged, escalate to supervisor.",
+              "relevance_score": 1.0
+            },
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 0.35
+            },
+            {
+              "policy_id": "POL-002",
+              "title": "Refund Processing Policy",
+              "category": "refunds",
+              "content": "Refunds are processed to the original payment method within 5-7 business days after approval. Full refunds are issued for: defective items within warranty, wrong items delivered, and items damaged during shipping. Partial refunds may be offered at agent discretion for minor cosmetic issues. Refunds over $200 require escalation to a supervisor for approval. A refund cannot be issued if one has already been processed for the same order.",
+              "relevance_score": 0.25
+            }
+          ],
+          "query": "damaged items policy"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: damaged items policy. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 42.04,
+        "retries": 0
+      },
+      {
+        "step": 4,
+        "timestamp": "2026-07-20T13:49:30.693855+00:00",
+        "thought": "Step 4 analysis for TKT-015: Customer identified: Emma Collins (tier: vip). Order ORD-1015: status=delivered, amount=$199.99, product=P003. Relevant policies found: Damaged Items Policy, Standard Return Policy. 2 information goal(s) still pending.",
+        "action": "escalate",
+        "action_input": {
+          "ticket_id": "TKT-015",
+          "summary": "Ticket TKT-015 requires human intervention. Reason: Customer requests replacement/exchange — requires fulfilment team. Category: damage_claim. Customer: Emma Collins (tier: vip). Order: ORD-1015 — status: delivered, amount: $199.99. Actions taken: get_order, get_customer, search_knowledge_base. Recommended: Verify damage photos and process replacement or refund.",
+          "priority": "medium"
+        },
+        "observation": {
+          "success": true,
+          "escalation_id": "ESC-EC8F2EE9",
+          "assigned_team": "Fulfilment Team",
+          "priority": "medium"
+        },
+        "success": true,
+        "reason": "Escalating because: Customer requests replacement/exchange — requires fulfilment team",
+        "latency_ms": 13.24,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "damage_claim",
+      "initial_flags": [],
+      "classification_confidence": 0.8,
+      "extracted_order_id": "ORD-1015",
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Retrieve order details for ORD-1015",
+        "Search knowledge base for relevant policies: damaged items policy",
+        "Retrieve product details for return window and warranty info",
+        "Check if order is eligible for refund based on policies",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.694014+00:00"
+  },
+  {
+    "ticket_id": "TKT-016",
+    "category": "refund",
+    "customer_tier": "standard",
+    "processing_summary": {
+      "final_status": "resolved",
+      "confidence": 0.825,
+      "confidence_reason": "Confidence 0.82: data_completeness=medium(0.50), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(0.90)",
+      "total_steps": 3,
+      "total_tool_calls": 3,
+      "total_duration_ms": 85.28,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [
+      "Damaged Items Policy",
+      "Refund Processing Policy",
+      "Standard Return Policy"
+    ],
+    "resolution_message": "Hi Unknown,\n\nThank you for reaching out to ShopWave Support.\n\nWe've reviewed your request regarding order your order. Unfortunately, we're unable to process a refund at this time because: does not meet our refund criteria.\n\nIf you have questions, please don't hesitate to reach out.\n\nBest regards,\nShopWave Support",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.654983+00:00",
+        "thought": "Analyzing ticket TKT-016: Subject: 'Refund request'. Classified as 'refund'. No order ID found in ticket. Need to gather information to resolve this ticket.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "unknown.user@email.com"
+        },
+        "observation": {
+          "customer_id": "",
+          "email": "unknown.user@email.com",
+          "name": "Unknown",
+          "tier": "standard",
+          "account_age_months": 0,
+          "total_orders": 0,
+          "total_spent": 0.0,
+          "open_tickets": 0,
+          "notes": ""
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 24.4,
+        "retries": 0
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.703588+00:00",
+        "thought": "Step 2 analysis for TKT-016: Customer identified: Unknown (tier: standard). 1 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "refund policy eligibility"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-002",
+              "title": "Refund Processing Policy",
+              "category": "refunds",
+              "content": "Refunds are processed to the original payment method within 5-7 business days after approval. Full refunds are issued for: defective items within warranty, wrong items delivered, and items damaged during shipping. Partial refunds may be offered at agent discretion for minor cosmetic issues. Refunds over $200 require escalation to a supervisor for approval. A refund cannot be issued if one has already been processed for the same order.",
+              "relevance_score": 0.95
+            },
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 0.25
+            },
+            {
+              "policy_id": "POL-004",
+              "title": "Damaged Items Policy",
+              "category": "damaged",
+              "content": "Items that arrive damaged (damaged during shipping) qualify for an immediate full refund without requiring the item to be returned. The customer should be asked to provide photographic evidence if possible, but refunds for damaged items should not be delayed pending photos. If the item was damaged by the customer after delivery, standard return policy applies instead. For items over $200 that arrive damaged, escalate to supervisor.",
+              "relevance_score": 0.25
+            }
+          ],
+          "query": "refund policy eligibility"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: refund policy eligibility. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 48.43,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.715581+00:00",
+        "thought": "Step 3 analysis for TKT-016: Customer identified: Unknown (tier: standard). Relevant policies found: Refund Processing Policy, Standard Return Policy. All information gathered. Ready to decide and respond.",
+        "action": "send_reply",
+        "action_input": {
+          "ticket_id": "TKT-016",
+          "message": "Hi Unknown,\n\nThank you for reaching out to ShopWave Support.\n\nWe've reviewed your request regarding order your order. Unfortunately, we're unable to process a refund at this time because: does not meet our refund criteria.\n\nIf you have questions, please don't hesitate to reach out.\n\nBest regards,\nShopWave Support"
+        },
+        "observation": {
+          "success": true,
+          "message_id": "MSG-715EF33C",
+          "timestamp": "2026-07-20T13:49:30.715352+00:00"
+        },
+        "success": true,
+        "reason": "All information gathered, composing and sending final response to customer.",
+        "latency_ms": 11.5,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "refund",
+      "initial_flags": [],
+      "classification_confidence": 0.65,
+      "extracted_order_id": null,
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Customer didn't provide order ID — lookup customer to find associated orders",
+        "Search knowledge base for relevant policies: refund policy eligibility",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.715669+00:00"
+  },
+  {
+    "ticket_id": "TKT-017",
+    "category": "refund",
+    "customer_tier": "standard",
+    "processing_summary": {
+      "final_status": "resolved",
+      "confidence": 1.0,
+      "confidence_reason": "Confidence 1.00: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(1.00)",
+      "total_steps": 5,
+      "total_tool_calls": 5,
+      "total_duration_ms": 469.85,
+      "errors_encountered": 0,
+      "flags": [
+        "threatening_language",
+        "urgency"
+      ]
+    },
+    "policy_references": [
+      "Damaged Items Policy",
+      "Refund Processing Policy",
+      "Standard Return Policy"
+    ],
+    "resolution_message": "Hi David,\n\nThank you for reaching out to ShopWave Support.\n\nWe've reviewed your request regarding order ORD-9999. Unfortunately, we're unable to process a refund at this time because: Order ORD-9999 not found in system.\n\nIf you have questions, please don't hesitate to reach out.\n\nBest regards,\nShopWave Support",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.815258+00:00",
+        "thought": "Analyzing ticket TKT-017: Subject: 'Refund for shoes'. Classified as 'refund'. Flags detected: threatening_language, urgency. Found order ID: ORD-9999. Need to gather information to resolve this ticket.",
+        "action": "get_order",
+        "action_input": {
+          "order_id": "ORD-9999"
+        },
+        "observation": {
+          "order_id": "ORD-9999",
+          "customer_id": "",
+          "product_id": "",
+          "quantity": 1,
+          "amount": 0.0,
+          "status": "unknown",
+          "order_date": null,
+          "delivery_date": null,
+          "return_deadline": null,
+          "refund_status": null,
+          "notes": ""
+        },
+        "success": true,
+        "reason": "Goal: Retrieve order details for ORD-9999. Priority: 0.9. Using tool: get_order.",
+        "latency_ms": 118.84,
+        "retries": 1
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.831643+00:00",
+        "thought": "Step 2 analysis for TKT-017: Order ORD-9999: status=unknown, amount=$0.0, product=. 4 information goal(s) still pending.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "david.park@email.com"
+        },
+        "observation": {
+          "customer_id": "C004",
+          "email": "david.park@email.com",
+          "name": "David Park",
+          "tier": "standard",
+          "account_age_months": 12,
+          "total_orders": 2,
+          "total_spent": 179.98,
+          "open_tickets": 1,
+          "notes": "Had a sizing issue previously resolved."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 16.15,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.861218+00:00",
+        "thought": "Step 3 analysis for TKT-017: Customer identified: David Park (tier: standard). Order ORD-9999: status=unknown, amount=$0.0, product=. 3 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "refund policy eligibility"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-002",
+              "title": "Refund Processing Policy",
+              "category": "refunds",
+              "content": "Refunds are processed to the original payment method within 5-7 business days after approval. Full refunds are issued for: defective items within warranty, wrong items delivered, and items damaged during shipping. Partial refunds may be offered at agent discretion for minor cosmetic issues. Refunds over $200 require escalation to a supervisor for approval. A refund cannot be issued if one has already been processed for the same order.",
+              "relevance_score": 0.95
+            },
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 0.25
+            },
+            {
+              "policy_id": "POL-004",
+              "title": "Damaged Items Policy",
+              "category": "damaged",
+              "content": "Items that arrive damaged (damaged during shipping) qualify for an immediate full refund without requiring the item to be returned. The customer should be asked to provide photographic evidence if possible, but refunds for damaged items should not be delayed pending photos. If the item was damaged by the customer after delivery, standard return policy applies instead. For items over $200 that arrive damaged, escalate to supervisor.",
+              "relevance_score": 0.25
+            }
+          ],
+          "query": "refund policy eligibility"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: refund policy eligibility. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 29.32,
+        "retries": 0
+      },
+      {
+        "step": 4,
+        "timestamp": "2026-07-20T13:49:31.150723+00:00",
+        "thought": "Step 4 analysis for TKT-017: Customer identified: David Park (tier: standard). Order ORD-9999: status=unknown, amount=$0.0, product=. Relevant policies found: Refund Processing Policy, Standard Return Policy. 2 information goal(s) still pending.",
+        "action": "check_refund_eligibility",
+        "action_input": {
+          "order_id": "ORD-9999"
+        },
+        "observation": {
+          "eligible": false,
+          "reason": "Order ORD-9999 not found in system",
+          "max_refund_amount": 0.0,
+          "policy_reference": "",
+          "order_status": "not_found"
+        },
+        "success": true,
+        "reason": "Goal: Check if order is eligible for refund based on policies. Priority: 0.8. Using tool: check_refund_eligibility.",
+        "latency_ms": 289.28,
+        "retries": 2
+      },
+      {
+        "step": 5,
+        "timestamp": "2026-07-20T13:49:31.165347+00:00",
+        "thought": "Step 5 analysis for TKT-017: Customer identified: David Park (tier: standard). Order ORD-9999: status=unknown, amount=$0.0, product=. Refund eligibility: NOT eligible -- Order ORD-9999 not found in system. Relevant policies found: Refund Processing Policy, Standard Return Policy. 1 information goal(s) still pending.",
+        "action": "send_reply",
+        "action_input": {
+          "ticket_id": "TKT-017",
+          "message": "Hi David,\n\nThank you for reaching out to ShopWave Support.\n\nWe've reviewed your request regarding order ORD-9999. Unfortunately, we're unable to process a refund at this time because: Order ORD-9999 not found in system.\n\nIf you have questions, please don't hesitate to reach out.\n\nBest regards,\nShopWave Support"
+        },
+        "observation": {
+          "success": true,
+          "message_id": "MSG-4B3A08AC",
+          "timestamp": "2026-07-20T13:49:31.165206+00:00"
+        },
+        "success": true,
+        "reason": "All information gathered, composing and sending final response to customer.",
+        "latency_ms": 14.35,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "refund",
+      "initial_flags": [
+        "threatening_language",
+        "urgency"
+      ],
+      "classification_confidence": 0.65,
+      "extracted_order_id": "ORD-9999",
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Retrieve order details for ORD-9999",
+        "Search knowledge base for relevant policies: refund policy eligibility",
+        "Retrieve product details for return window and warranty info",
+        "Check if order is eligible for refund based on policies",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:31.165430+00:00"
+  },
+  {
+    "ticket_id": "TKT-018",
+    "category": "refund",
+    "customer_tier": "standard",
+    "processing_summary": {
+      "final_status": "escalated",
+      "confidence": 0.787,
+      "confidence_reason": "Confidence 0.79: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=low(0.30), clarity=high(0.85)",
+      "total_steps": 3,
+      "total_tool_calls": 3,
+      "total_duration_ms": 50.93,
+      "errors_encountered": 0,
+      "flags": [
+        "social_engineering",
+        "urgency"
+      ]
+    },
+    "policy_references": [],
+    "resolution_message": "Ticket TKT-018 requires human intervention. Reason: Social engineering detected — customer claims premium/VIP but is standard tier. Category: refund. Customer: Bob Mendes (tier: standard). Order: ORD-1002 — status: delivered, amount: $249.99. Actions taken: get_order, get_customer. Recommended: Review order and process refund if eligible with supervisor override.",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.729365+00:00",
+        "thought": "Analyzing ticket TKT-018: Subject: 'Urgent refund needed'. Classified as 'refund'. Flags detected: social_engineering, urgency. Found order ID: ORD-1002. Need to gather information to resolve this ticket.",
+        "action": "get_order",
+        "action_input": {
+          "order_id": "ORD-1002"
+        },
+        "observation": {
+          "order_id": "ORD-1002",
+          "customer_id": "C002",
+          "product_id": "P006",
+          "quantity": 1,
+          "amount": 249.99,
+          "status": "delivered",
+          "order_date": "2024-03-01",
+          "delivery_date": "2024-03-04",
+          "return_deadline": "2024-03-19",
+          "refund_status": null,
+          "notes": "High-value item. 15-day return window applies."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve order details for ORD-1002. Priority: 0.9. Using tool: get_order.",
+        "latency_ms": 11.87,
+        "retries": 0
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.754304+00:00",
+        "thought": "Step 2 analysis for TKT-018: Order ORD-1002: status=delivered, amount=$249.99, product=P006. 4 information goal(s) still pending.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "bob.mendes@email.com"
+        },
+        "observation": {
+          "customer_id": "C002",
+          "email": "bob.mendes@email.com",
+          "name": "Bob Mendes",
+          "tier": "standard",
+          "account_age_months": 6,
+          "total_orders": 2,
+          "total_spent": 329.98,
+          "open_tickets": 0,
+          "notes": "Relatively new customer. Standard tier only."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 24.73,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.767762+00:00",
+        "thought": "Step 3 analysis for TKT-018: Customer identified: Bob Mendes (tier: standard). Order ORD-1002: status=delivered, amount=$249.99, product=P006. 3 information goal(s) still pending.",
+        "action": "escalate",
+        "action_input": {
+          "ticket_id": "TKT-018",
+          "summary": "Ticket TKT-018 requires human intervention. Reason: Social engineering detected — customer claims premium/VIP but is standard tier. Category: refund. Customer: Bob Mendes (tier: standard). Order: ORD-1002 — status: delivered, amount: $249.99. Actions taken: get_order, get_customer. Recommended: Review order and process refund if eligible with supervisor override.",
+          "priority": "high"
+        },
+        "observation": {
+          "success": true,
+          "escalation_id": "ESC-FE6E6B38",
+          "assigned_team": "Trust & Safety",
+          "priority": "high"
+        },
+        "success": true,
+        "reason": "Escalating because: Social engineering detected — customer claims premium/VIP but is standard tier",
+        "latency_ms": 13.24,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "refund",
+      "initial_flags": [
+        "social_engineering",
+        "urgency"
+      ],
+      "classification_confidence": 0.65,
+      "extracted_order_id": "ORD-1002",
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Retrieve order details for ORD-1002",
+        "Search knowledge base for relevant policies: customer tier benefits premium vip policy",
+        "Retrieve product details for return window and warranty info",
+        "Check if order is eligible for refund based on policies",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.767854+00:00"
+  },
+  {
+    "ticket_id": "TKT-019",
+    "category": "general_faq",
+    "customer_tier": "standard",
+    "processing_summary": {
+      "final_status": "resolved",
+      "confidence": 1.0,
+      "confidence_reason": "Confidence 1.00: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(1.00)",
+      "total_steps": 3,
+      "total_tool_calls": 3,
+      "total_duration_ms": 108.61,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [
+      "Damaged Items Policy",
+      "Product-Specific Return Rules",
+      "Standard Return Policy"
+    ],
+    "resolution_message": "Hi Irene,\n\nThank you for reaching out to ShopWave Support.\n\nHere's what we found regarding your question:\n\n**Standard Return Policy**: ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective ",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.770802+00:00",
+        "thought": "Analyzing ticket TKT-019: Subject: 'General question about returns'. Classified as 'general_faq'. No order ID found in ticket. Need to gather information to resolve this ticket.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "general question about returns hello, what is your return policy for electronics? and do you offer e"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 1.0
+            },
+            {
+              "policy_id": "POL-004",
+              "title": "Damaged Items Policy",
+              "category": "damaged",
+              "content": "Items that arrive damaged (damaged during shipping) qualify for an immediate full refund without requiring the item to be returned. The customer should be asked to provide photographic evidence if possible, but refunds for damaged items should not be delayed pending photos. If the item was damaged by the customer after delivery, standard return policy applies instead. For items over $200 that arrive damaged, escalate to supervisor.",
+              "relevance_score": 1.0
+            },
+            {
+              "policy_id": "POL-010",
+              "title": "Product-Specific Return Rules",
+              "category": "returns",
+              "content": "Specific product categories have additional return restrictions: (1) Electronics with broken seals cannot be returned unless defective. (2) Footwear must be unworn and in original packaging — no returns if used outdoors. (3) Hygiene products (yoga mats, personal care) are non-returnable if used. (4) Electronics that have been registered online by the customer are non-returnable. (5) High-value electronics (over $200) have a 15-day return window instead of the standard 30 days.",
+              "relevance_score": 1.0
+            }
+          ],
+          "query": "general question about returns hello, what is your return policy for electronics? and do you offer e"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base to answer customer's general question. Priority: 0.9. Using tool: search_knowledge_base.",
+        "latency_ms": 45.63,
+        "retries": 0
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.809789+00:00",
+        "thought": "Step 2 analysis for TKT-019: Relevant policies found: Standard Return Policy, Damaged Items Policy. 1 information goal(s) still pending.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "irene.castillo@email.com"
+        },
+        "observation": {
+          "customer_id": "C009",
+          "email": "irene.castillo@email.com",
+          "name": "Irene Castillo",
+          "tier": "standard",
+          "account_age_months": 10,
+          "total_orders": 2,
+          "total_spent": 209.98,
+          "open_tickets": 0,
+          "notes": "Recently had a refund processed for ORD-1009."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 38.77,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.833501+00:00",
+        "thought": "Step 3 analysis for TKT-019: Customer identified: Irene Castillo (tier: standard). Relevant policies found: Standard Return Policy, Damaged Items Policy. All information gathered. Ready to decide and respond.",
+        "action": "send_reply",
+        "action_input": {
+          "ticket_id": "TKT-019",
+          "message": "Hi Irene,\n\nThank you for reaching out to ShopWave Support.\n\nHere's what we found regarding your question:\n\n**Standard Return Policy**: ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.\n\n**Damaged Items Policy**: Items that arrive damaged (damaged during shipping) qualify for an immediate full refund without requiring the item to be returned. The customer should be asked to provide photographic evidence if possible, but refunds for damaged items should not be delayed pending photos. If the item was damaged by the customer after delivery, standard return policy applies instead. For items over $200 that arrive damaged, escalate to supervisor.\n\nIf you need more details, feel free to ask!\n\nBest regards,\nShopWave Support"
+        },
+        "observation": {
+          "success": true,
+          "message_id": "MSG-808BC387",
+          "timestamp": "2026-07-20T13:49:30.833349+00:00"
+        },
+        "success": true,
+        "reason": "All information gathered, composing and sending final response to customer.",
+        "latency_ms": 23.48,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "general_faq",
+      "initial_flags": [],
+      "classification_confidence": 0.9,
+      "extracted_order_id": null,
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Search knowledge base to answer customer's general question",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.833583+00:00"
+  },
+  {
+    "ticket_id": "TKT-020",
+    "category": "damage_claim",
+    "customer_tier": "standard",
+    "processing_summary": {
+      "final_status": "resolved",
+      "confidence": 0.825,
+      "confidence_reason": "Confidence 0.82: data_completeness=medium(0.50), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(0.90)",
+      "total_steps": 3,
+      "total_tool_calls": 3,
+      "total_duration_ms": 95.25,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [
+      "Damaged Items Policy",
+      "Refund Processing Policy",
+      "Standard Return Policy"
+    ],
+    "resolution_message": "Hi James,\n\nThank you for reaching out to ShopWave Support.\n\nWe're sorry to hear about the issue with your order. We've noted your report and our team is looking into it.\n\nBest regards,\nShopWave Support",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.781099+00:00",
+        "thought": "Analyzing ticket TKT-020: Subject: 'my thing is broken pls help'. Classified as 'damage_claim'. No order ID found in ticket. Need to gather information to resolve this ticket.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "james.wu@email.com"
+        },
+        "observation": {
+          "customer_id": "C010",
+          "email": "james.wu@email.com",
+          "name": "James Wu",
+          "tier": "standard",
+          "account_age_months": 4,
+          "total_orders": 1,
+          "total_spent": 199.99,
+          "open_tickets": 0,
+          "notes": "New customer, first order currently in transit."
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 19.47,
+        "retries": 0
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.829431+00:00",
+        "thought": "Step 2 analysis for TKT-020: Customer identified: James Wu (tier: standard). 1 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "damaged items policy"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-004",
+              "title": "Damaged Items Policy",
+              "category": "damaged",
+              "content": "Items that arrive damaged (damaged during shipping) qualify for an immediate full refund without requiring the item to be returned. The customer should be asked to provide photographic evidence if possible, but refunds for damaged items should not be delayed pending photos. If the item was damaged by the customer after delivery, standard return policy applies instead. For items over $200 that arrive damaged, escalate to supervisor.",
+              "relevance_score": 1.0
+            },
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 0.35
+            },
+            {
+              "policy_id": "POL-002",
+              "title": "Refund Processing Policy",
+              "category": "refunds",
+              "content": "Refunds are processed to the original payment method within 5-7 business days after approval. Full refunds are issued for: defective items within warranty, wrong items delivered, and items damaged during shipping. Partial refunds may be offered at agent discretion for minor cosmetic issues. Refunds over $200 require escalation to a supervisor for approval. A refund cannot be issued if one has already been processed for the same order.",
+              "relevance_score": 0.25
+            }
+          ],
+          "query": "damaged items policy"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: damaged items policy. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 48.11,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.856484+00:00",
+        "thought": "Step 3 analysis for TKT-020: Customer identified: James Wu (tier: standard). Relevant policies found: Damaged Items Policy, Standard Return Policy. All information gathered. Ready to decide and respond.",
+        "action": "send_reply",
+        "action_input": {
+          "ticket_id": "TKT-020",
+          "message": "Hi James,\n\nThank you for reaching out to ShopWave Support.\n\nWe're sorry to hear about the issue with your order. We've noted your report and our team is looking into it.\n\nBest regards,\nShopWave Support"
+        },
+        "observation": {
+          "success": true,
+          "message_id": "MSG-F7157879",
+          "timestamp": "2026-07-20T13:49:30.856252+00:00"
+        },
+        "success": true,
+        "reason": "All information gathered, composing and sending final response to customer.",
+        "latency_ms": 26.81,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "damage_claim",
+      "initial_flags": [],
+      "classification_confidence": 0.65,
+      "extracted_order_id": null,
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Customer didn't provide order ID — lookup customer to find associated orders",
+        "Search knowledge base for relevant policies: damaged items policy",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.856586+00:00"
+  },
+  {
+    "ticket_id": "TKT-021",
+    "category": "damage_claim",
+    "customer_tier": "standard",
+    "processing_summary": {
+      "final_status": "resolved",
+      "confidence": 0.825,
+      "confidence_reason": "Confidence 0.82: data_completeness=medium(0.50), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(0.90)",
+      "total_steps": 3,
+      "total_tool_calls": 3,
+      "total_duration_ms": 97.72,
+      "errors_encountered": 0,
+      "flags": []
+    },
+    "policy_references": [
+      "Damaged Items Policy",
+      "Refund Processing Policy",
+      "Standard Return Policy"
+    ],
+    "resolution_message": "Hi Unknown,\n\nThank you for reaching out to ShopWave Support.\n\nWe're sorry to hear about the issue with your order. We've noted your report and our team is looking into it.\n\nBest regards,\nShopWave Support",
+    "steps": [
+      {
+        "step": 1,
+        "timestamp": "2026-07-20T13:49:30.796118+00:00",
+        "thought": "Analyzing ticket TKT-021: Subject: 'Refund request for defective earbuds'. Classified as 'damage_claim'. No order ID found in ticket. Need to gather information to resolve this ticket.",
+        "action": "get_customer",
+        "action_input": {
+          "email": "sweta.mehta@gmail.com"
+        },
+        "observation": {
+          "customer_id": "",
+          "email": "sweta.mehta@gmail.com",
+          "name": "Unknown",
+          "tier": "standard",
+          "account_age_months": 0,
+          "total_orders": 0,
+          "total_spent": 0.0,
+          "open_tickets": 0,
+          "notes": ""
+        },
+        "success": true,
+        "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
+        "latency_ms": 33.04,
+        "retries": 0
+      },
+      {
+        "step": 2,
+        "timestamp": "2026-07-20T13:49:30.845297+00:00",
+        "thought": "Step 2 analysis for TKT-021: Customer identified: Unknown (tier: standard). 1 information goal(s) still pending.",
+        "action": "search_knowledge_base",
+        "action_input": {
+          "query": "damaged items policy"
+        },
+        "observation": {
+          "articles": [
+            {
+              "policy_id": "POL-004",
+              "title": "Damaged Items Policy",
+              "category": "damaged",
+              "content": "Items that arrive damaged (damaged during shipping) qualify for an immediate full refund without requiring the item to be returned. The customer should be asked to provide photographic evidence if possible, but refunds for damaged items should not be delayed pending photos. If the item was damaged by the customer after delivery, standard return policy applies instead. For items over $200 that arrive damaged, escalate to supervisor.",
+              "relevance_score": 1.0
+            },
+            {
+              "policy_id": "POL-001",
+              "title": "Standard Return Policy",
+              "category": "returns",
+              "content": "ShopWave offers returns within the designated return window for each product category. Standard products have a 30-day return window from delivery date. Electronics accessories have a 60-day return window. High-value electronics (items over $200) have a shortened 15-day return window. Items must be in original condition and packaging unless the item is defective or was damaged during shipping. The return window is calculated from the delivery_date, not the order_date.",
+              "relevance_score": 0.35
+            },
+            {
+              "policy_id": "POL-002",
+              "title": "Refund Processing Policy",
+              "category": "refunds",
+              "content": "Refunds are processed to the original payment method within 5-7 business days after approval. Full refunds are issued for: defective items within warranty, wrong items delivered, and items damaged during shipping. Partial refunds may be offered at agent discretion for minor cosmetic issues. Refunds over $200 require escalation to a supervisor for approval. A refund cannot be issued if one has already been processed for the same order.",
+              "relevance_score": 0.25
+            }
+          ],
+          "query": "damaged items policy"
+        },
+        "success": true,
+        "reason": "Goal: Search knowledge base for relevant policies: damaged items policy. Priority: 0.8. Using tool: search_knowledge_base.",
+        "latency_ms": 48.91,
+        "retries": 0
+      },
+      {
+        "step": 3,
+        "timestamp": "2026-07-20T13:49:30.860288+00:00",
+        "thought": "Step 3 analysis for TKT-021: Customer identified: Unknown (tier: standard). Relevant policies found: Damaged Items Policy, Standard Return Policy. All information gathered. Ready to decide and respond.",
+        "action": "send_reply",
+        "action_input": {
+          "ticket_id": "TKT-021",
+          "message": "Hi Unknown,\n\nThank you for reaching out to ShopWave Support.\n\nWe're sorry to hear about the issue with your order. We've noted your report and our team is looking into it.\n\nBest regards,\nShopWave Support"
+        },
+        "observation": {
+          "success": true,
+          "message_id": "MSG-1F98526D",
+          "timestamp": "2026-07-20T13:49:30.860016+00:00"
+        },
+        "success": true,
+        "reason": "All information gathered, composing and sending final response to customer.",
+        "latency_ms": 14.74,
+        "retries": 0
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "initial_category": "damage_claim",
+      "initial_flags": [],
+      "classification_confidence": 0.8,
+      "extracted_order_id": null,
+      "mode": "deterministic",
+      "initial_goals": [
+        "Retrieve customer profile for tier-based decision making",
+        "Customer didn't provide order ID — lookup customer to find associated orders",
+        "Search knowledge base for relevant policies: damaged items policy",
+        "Send final response to customer"
+      ],
+      "llm": {
+        "llm_used": false
+      }
+    },
+    "generated_at": "2026-07-20T13:49:30.860397+00:00"
   }
 ]

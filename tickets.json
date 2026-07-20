@@ -198,5 +198,35 @@
     "created_at": "2024-03-15T17:00:00Z",
     "tier": 2,
     "expected_action": "completely ambiguous — no order ID, no product, no issue description. Agent must ask targeted clarifying questions before proceeding."
+  },
+  {
+    "ticket_id": "TKT-021",
+    "customer_email": "sweta.mehta@gmail.com",
+    "subject": "Refund request for defective earbuds",
+    "body": "Ord Id -124534 i have founded my phone damage and not working ",
+    "source": "email",
+    "created_at": "2026-07-20T19:18:45.965921Z",
+    "tier": 2,
+    "expected_action": "Return"
+  },
+  {
+    "ticket_id": "TKT-022",
+    "customer_email": "tarun.phogat18@gmail.com",
+    "subject": "Refund request for defective headphones ",
+    "body": "Hi, I bought a pair of headphones last month but they stopped working after a week. Order number is ORD-1001. I'd like a full refund please.",
+    "source": "chat",
+    "created_at": "2026-07-20T19:20:47.880927Z",
+    "tier": 3,
+    "expected_action": "Return window expired , put it on escalated "
+  },
+  {
+    "ticket_id": "TKT-023",
+    "customer_email": "hardik@12gmail.com",
+    "subject": "Refund request for defective headphones",
+    "body": "Ord id 232112 i found defective headphone and want to return them and gave me my refund ",
+    "source": "email",
+    "created_at": "2026-07-20T19:24:51.591911Z",
+    "tier": 2,
+    "expected_action": "Asking for Refund "
   }
 ]

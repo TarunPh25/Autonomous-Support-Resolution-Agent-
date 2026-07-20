@@ -8,21 +8,21 @@
     "confidence_reason": "Confidence 1.00: data_completeness=high(1.00), tool_success_rate=high(1.00), policy_alignment=high(1.00), clarity=high(1.00)",
     "total_steps": 5,
     "total_tool_calls": 5,
-    "total_duration_ms": 246.86,
+    "total_duration_ms": 145.09,
     "errors_encountered": 0,
     "flags": []
   },
   "policy_references": [
-    "Product-Specific Return Rules",
     "Damaged Items Policy",
     "POL-001 (Standard Return Policy), POL-002 (Refund Processing Policy)",
+    "Product-Specific Return Rules",
     "Standard Return Policy"
   ],
   "resolution_message": "Ticket TKT-002 requires human intervention. Reason: Refund amount ($249.99) exceeds $200 — requires supervisor approval. Category: return. Customer: Bob Mendes (tier: standard). Order: ORD-1002 — status: delivered, amount: $249.99. Actions taken: get_order, get_customer, search_knowledge_base, check_refund_eligibility. Recommended: Review ticket and take appropriate action.",
   "steps": [
     {
       "step": 1,
-      "timestamp": "2026-07-14T15:49:38.787403+00:00",
+      "timestamp": "2026-07-20T13:49:30.106071+00:00",
       "thought": "Analyzing ticket TKT-002: Subject: 'I want to return my watch'. Classified as 'return'. Found order ID: ORD-1002. Need to gather information to resolve this ticket.",
       "action": "get_order",
       "action_input": {
@@ -43,12 +43,12 @@
       },
       "success": true,
       "reason": "Goal: Retrieve order details for ORD-1002. Priority: 0.9. Using tool: get_order.",
-      "latency_ms": 57.75,
+      "latency_ms": 25.62,
       "retries": 0
     },
     {
       "step": 2,
-      "timestamp": "2026-07-14T15:49:38.841158+00:00",
+      "timestamp": "2026-07-20T13:49:30.129896+00:00",
       "thought": "Step 2 analysis for TKT-002: Order ORD-1002: status=delivered, amount=$249.99, product=P006. 4 information goal(s) still pending.",
       "action": "get_customer",
       "action_input": {
@@ -67,12 +67,12 @@
       },
       "success": true,
       "reason": "Goal: Retrieve customer profile for tier-based decision making. Priority: 0.9. Using tool: get_customer.",
-      "latency_ms": 53.75,
+      "latency_ms": 23.62,
       "retries": 0
     },
     {
       "step": 3,
-      "timestamp": "2026-07-14T15:49:38.872533+00:00",
+      "timestamp": "2026-07-20T13:49:30.157342+00:00",
       "thought": "Step 3 analysis for TKT-002: Customer identified: Bob Mendes (tier: standard). Order ORD-1002: status=delivered, amount=$249.99, product=P006. 3 information goal(s) still pending.",
       "action": "search_knowledge_base",
       "action_input": {
@@ -106,12 +106,12 @@
       },
       "success": true,
       "reason": "Goal: Search knowledge base for relevant policies: return policy window. Priority: 0.8. Using tool: search_knowledge_base.",
-      "latency_ms": 31.38,
+      "latency_ms": 27.25,
       "retries": 0
     },
     {
       "step": 4,
-      "timestamp": "2026-07-14T15:49:38.943409+00:00",
+      "timestamp": "2026-07-20T13:49:30.205056+00:00",
       "thought": "Step 4 analysis for TKT-002: Customer identified: Bob Mendes (tier: standard). Order ORD-1002: status=delivered, amount=$249.99, product=P006. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. 2 information goal(s) still pending.",
       "action": "check_refund_eligibility",
       "action_input": {
@@ -126,12 +126,12 @@
       },
       "success": true,
       "reason": "Goal: Check if order is eligible for refund based on policies. Priority: 0.8. Using tool: check_refund_eligibility.",
-      "latency_ms": 69.66,
+      "latency_ms": 47.44,
       "retries": 0
     },
     {
       "step": 5,
-      "timestamp": "2026-07-14T15:49:38.974452+00:00",
+      "timestamp": "2026-07-20T13:49:30.224917+00:00",
       "thought": "Step 5 analysis for TKT-002: Customer identified: Bob Mendes (tier: standard). Order ORD-1002: status=delivered, amount=$249.99, product=P006. Refund eligibility: eligible -- Order is delivered and within return window. Eligible for refund.. Relevant policies found: Standard Return Policy, Product-Specific Return Rules. 1 information goal(s) still pending.",
       "action": "escalate",
       "action_input": {
@@ -141,13 +141,13 @@
       },
       "observation": {
         "success": true,
-        "escalation_id": "ESC-266D7FF0",
+        "escalation_id": "ESC-BDB673BC",
         "assigned_team": "Tier 2 Support",
         "priority": "high"
       },
       "success": true,
       "reason": "Escalating because: Refund amount ($249.99) exceeds $200 — requires supervisor approval",
-      "latency_ms": 29.68,
+      "latency_ms": 19.63,
       "retries": 0
     }
   ],
@@ -170,5 +170,5 @@
       "llm_used": false
     }
   },
-  "generated_at": "2026-07-14T15:49:38.975302+00:00"
+  "generated_at": "2026-07-20T13:49:30.225018+00:00"
 }

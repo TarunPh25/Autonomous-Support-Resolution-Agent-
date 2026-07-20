@@ -41,7 +41,7 @@ class CustomerInput(BaseModel):
 class CustomerOutput(BaseModel):
     customer_id: str = ""
     email: str
-    name: str = "Unknown"
+    name: str = "Customer"
     tier: str = "standard"
     account_age_months: int = 0
     total_orders: int = 0
